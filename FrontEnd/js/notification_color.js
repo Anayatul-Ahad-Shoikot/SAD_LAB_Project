@@ -1,0 +1,13 @@
+function markAsRead(notificationId, element) {
+    if (element.classList.contains('unseen')) {
+        element.style.background = 'white';
+    }
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200) {
+            location.reload();
+        }
+    };
+    xhr.open("GET", "/Root/Notifications/UPDATE_NOTIFI.php?id=" + notificationId, true);
+    xhr.send();
+}

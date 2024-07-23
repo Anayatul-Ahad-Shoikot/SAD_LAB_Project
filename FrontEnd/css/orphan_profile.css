@@ -1,0 +1,199 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 3% 15%;
+}
+
+.container .left_portion {
+    display: flex;
+    gap: 2rem;
+    background: rgba(255, 255, 255, .8);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+    align-items: center;
+    width: 100%;
+}
+
+.container .left_portion img {
+    width: 14rem;
+    height: 14rem;
+    border-radius: 50%;
+    border: 5px solid black;
+    margin: 1rem;
+}
+
+.container .left_portion .userDetails {
+    width: -webkit-fill-available;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.5rem 2.5rem;
+}
+
+.container .left_portion .userDetails1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #dbf4ff21;
+    box-shadow: 1rem 1rem 5rem rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    width: -webkit-fill-available;
+}
+
+.container .left_portion .userDetails .userName h1 {
+    font-size: 3rem;
+    color: var(--secondary-color-dark);
+}
+
+.container .left_portion .userDetails .map {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.container .left_portion .userDetails .inner_container {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.container .left_portion .work {
+    width: 35%;
+    height: 212px;
+    padding: 2rem;
+    background-color: #dbf4ff21;
+    box-shadow: 1rem 1rem 5rem rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+}
+
+.container .left_portion .work .tabs {
+    display: flex;
+    font-weight: 700;
+    color: var(--secondary-color-dark);
+    border-bottom: 2px solid black;
+    margin-bottom: 25px;
+    gap: .8rem;
+    align-items: center;
+}
+
+.container .left_portion .work .primary h1 {
+    font-size: 1.4rem;
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 0.6rem;
+}
+
+.container .left_portion .work .primary p {
+    margin-bottom: 1.8rem;
+    font-size: 1.2rem;
+    color: rgba(0, 0, 0, 0.6);
+    line-height: 1.6rem;
+}
+
+.container .options {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    border-bottom: 2px solid var(--text-color-dark);
+}
+
+.options a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.options .btn {
+    padding: 10px 15px;
+    font-size: 1rem;
+    background-color: var(--primary-color-light);
+    border-radius: 4rem;
+    cursor: pointer;
+    font-weight: 700;
+    text-align: center;
+    color: #fff;
+    transition: .6s;
+    margin: 1.5rem .5rem;
+}
+
+.options .btn:hover {
+    background-color: var(--secondary-color-dark);
+    color: var(--text-color-dark);
+    transition: .6s;
+}
+
+.container .right_portion {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3%;
+
+}
+
+.container .right_portion .tabs {
+    display: flex;
+    font-weight: 700;
+    color: var(--secondary-color-light);
+    border-bottom: 2px solid black;
+    margin-bottom: 25px;
+    gap: .8rem;
+    align-items: center;
+}
+
+.container .right_portion .plate {
+    background-color: #dbf4ff21;
+    box-shadow: 1rem 1rem 4rem rgba(0, 0, 0, 0.3);
+    margin-bottom: 1.5rem;
+    border-radius: 15px;
+}
+
+.container .right_portion h1 {
+    color: var(--primary-color-dark);
+    margin: 2rem;
+}
+
+.container .right_portion .info_box {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2rem;
+    font-size: 20px;
+    padding-left: 2.5rem;
+    align-items: center;
+}
+
+.container .right_portion .info_box .top {
+    margin-left: 4rem;
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+}
+
+.container .right_portion .info_box .cel {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    background-color: #dbf4ff21;
+    box-shadow: -2rem -0.5rem 5rem rgba(0, 0, 0, 0.2);
+    margin: 5px;
+    justify-content: space-between;
+    border-radius: 15px;
+}
+
+.cel label {
+    width: 250px;
+    font-weight: bold;
+    display: block;
+    margin-left: 1.5rem;
+}
+
+.cel input {
+    width: 85%;
+    height: 46px;
+    padding: 12px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: none;
+    box-sizing: border-box;
+    justify-content: right;
+    color: var(--text-color-dark);
+}

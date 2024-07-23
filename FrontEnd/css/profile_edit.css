@@ -1,0 +1,72 @@
+.container {
+    margin: 3% 15%;
+    padding: 3rem;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.13);
+}
+
+.container h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--secondary-color-dark);
+    padding: 0;
+    margin: 30px 0px;
+    text-shadow: 2px 5px 30px hsl(0, 0%, 100%);
+}
+
+.container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.container label {
+    font-size: small;
+    color: gray;
+    padding-bottom: -5px;
+}
+
+.container input {
+    margin: 0 0 .7rem 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.container select {
+    color: gray;
+    padding: 8px;
+    border-color: gray;
+    border-radius: 8px;
+}
+
+.container .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container button {
+    width: 50%;
+    background-color: var(--primary-color-dark);
+    color: #fff;
+    border: none;
+    padding: 10px 10px;
+    margin: 10px 0px;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background-color: var(--primary-color-light);
+}
+
+.container .opt {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+}
