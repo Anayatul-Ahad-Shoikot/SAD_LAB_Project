@@ -1,7 +1,6 @@
 <?php
 
 include('db_con.php');
-session_start();
 
 if (isset($_GET['orphan_id'])) {
     $orphan_id = mysqli_real_escape_string($con, $_GET['orphan_id']);
@@ -13,7 +12,6 @@ if (isset($_GET['orphan_id'])) {
         $orphan_id = $row['orphan_id'];
         $org_id = $row['org_id'];
         $first_name = $row['first_name'];
-        $last_name = $row['last_name'];
         $age = $row['age'];
         $gender = $row['gender'];
         $religion = $row['religion'];

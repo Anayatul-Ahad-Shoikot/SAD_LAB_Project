@@ -1,4 +1,5 @@
 <?php
+include("../../../BackEnd/organization_profile_fetch_BE.php");
 include("../../../BackEnd/orphan_profile_fetch_BE.php");
 $acc_id = $_SESSION['acc_id'];
 $fetchUnreadNotificationsQuery = "SELECT COUNT(*) as unread_count FROM notifications WHERE is_read = 0 AND user_id = (SELECT user_id FROM user_list WHERE acc_id = $acc_id)";
@@ -37,170 +38,175 @@ if ($unreadNotificationsResult) {
         <?php
         if (isset($_SESSION['positive'])) {
             echo '<div class="positive">
-                        <h5>' . $_SESSION['positive'] . '</h5>
-                    </div>';
+                            <h5>' . $_SESSION['positive'] . '</h5>
+                        </div>';
             unset($_SESSION['positive']);
         }
         if (isset($_SESSION['negative'])) {
             echo '<div class="negative">
-                        <h5>' . $_SESSION['negative'] . '</h5>
-                    </div>';
+                            <h5>' . $_SESSION['negative'] . '</h5>
+                        </div>';
             unset($_SESSION['negative']);
         }
         ?>
     </div>
 
     <div class="container">
-        <div class="left_portion">
-            <div class="userDetails1">
-                <div>
-                    <img src="../../../UserImage/childpic/<?php echo $orphan_image ?>" alt="profile">
-                </div>
-                <div class="userDetails">
-                    <div class="userName">
-                        <h1><?php echo $first_name, " ", $last_name ?></h1>
-                    </div>
-                    <div class="map">
-                        <i class='bx bxs-briefcase'></i>
-                        <p><?php echo $org_name ?></p>
-                    </div>
-                    <div class="map">
-                        <i class="ri-map-pin-fill ri"></i>
-                        <p><?php echo $org_location ?></p>
-                    </div>
-                    <div class="inner_container">
-                        <div class="map">
-                            <i class='bx bxs-send'></i>
-                            <p>Gift</p>
-                        </div>
-                        <div class="map">
-                            <i class='bx bxs-error-alt'></i>
-                            <p>Reports</p>
-                        </div>
-                    </div>
-                </div>
+        <div class="accounnt-information-container">
+            <div class="account-picture">
+                <img src="../../../UserImage/childpic/<?php echo $orphan_image ?>" alt="profile">
             </div>
-            <div class="work">
-                <div class="tabs">
-                    <i class='bx bxs-briefcase'></i>
-                    <p>Local Gardian</p>
-                </div>
-                <div class="primary">
-                    <h1><?php echo $guardian_name ?></h1>
-                    <p><?php echo $guardian_contact ?></p>
-                    <p><?php echo $guardian_location ?></p>
-                </div>
+            <div class="account-data">
+                <h1><?php echo $first_name ?></h1>
+                <p>Belong to : <?php echo $org_name ?></p>
+                <p>Location : <?php echo $org_location ?></p>
+                <p>Email : <?php echo $org_email ?></p>
+                <p>Contact : <?php echo $org_phone ?></p>
+            </div>
+            <div class="biography">
+                <h1>Local Guardian info :</h1>
+                <p>Name : <?php echo $guardian_name ?></p>
+                <p>Contact : <?php echo $guardian_contact ?></p>
+                <p>Address : <?php echo $guardian_location ?></p>
             </div>
         </div>
+
         <div class="options">
-            <a href="/Root/Orphanage/EDIT_ORPHAN_PROFILE.php?orphan_id=<?php echo $orphan_id ?>" class="btn">Edit</a>
-            <a href="orphan.php" class="btn">Orphanage</a>
+            <a href="orphan.php" class="btn">back</a>
         </div>
 
 
-        <div class="right_portion">
-            <div class="plate">
-                <h1 class="heading">Basic Information -</h1>
-                <div class="info_box">
-                    <div class="top">
-                        <div class="cel">
-                            <label>First Name :</label>
-                            <input placeholder="<?php echo $first_name ?>" disabled>
-                        </div>
-                        <div class="cel">
-                            <label>Last Name :</label>
-                            <input placeholder="<?php echo $last_name ?>" disabled>
-                        </div>
-                        <div class="cel">
-                            <label>Orphan ID :</label>
-                            <input placeholder="<?php echo $orphan_id ?>" disabled>
-                        </div>
-                        <div class="cel">
-                            <label>Age :</label>
-                            <input placeholder="<?php echo $age ?>" disabled>
-                        </div>
-                        <div class="cel">
-                            <label>Gender :</label>
-                            <input placeholder="<?php echo $gender ?>" disabled>
-                        </div>
-                        <div class="cel">
-                            <label>Religion :</label>
-                            <input placeholder="<?php echo $religion ?>" disabled>
-                        </div>
-                        <div class="cel">
-                            <label>Date of Birth :</label>
-                            <input placeholder="<?php echo $date_of_birth ?>" disabled>
-                        </div>
-                        <div class="cel">
-                            <label>Since :</label>
-                            <input placeholder="<?php echo $since ?>" disabled>
-                        </div>
-                        <div class="cel">
-                            <label>Adoption Status :</label>
-                            <?php
-                            if ($adoption_status == '0') {
-                                $adoption_status = 'Available';
-                            } else {
-                                $adoption_status = 'Adopted';
-                            }
-                            ?>
-                            <input placeholder="<?php echo $adoption_status ?>" disabled>
-                        </div>
-                    </div>
+        <div class="form">
+            <h2>Profile Information</h2>
+            <form action="../../../BackEnd/orphan_profile_edit_BE.php" method="post" enctype="multipart/form-data">
+                <div class="form_row">
+                    <label>Full Name:</label>
+                    <input type="text" name="first_name" placeholder="<?php echo $first_name ?>">
                 </div>
-            </div>
-            <div class="plate">
-                <h1 class="heading">Other Information -</h1>
-                <div class="info_box">
-                    <div class="top">
-                        <div class="cel">
-                            <label>Family Status :</label>
-                            <input placeholder="<?php echo $family_status ?>" disabled>
-                        </div>
-                        <div class="cel">
-                            <label>Physical Condition :</label>
-                            <input placeholder="<?php echo $physical_condition ?>" disabled>
-                        </div>
-                        <div class="cel">
-                            <label>Education :</label>
-                            <input placeholder="<?php echo $education_level ?>" disabled>
-                        </div>
-                        <div class="cel">
-                            <label>Medical History :</label>
-                            <input placeholder="<?php echo $medical_history ?>" disabled>
-                        </div>
-                        <div class="cel">
-                            <label>Hobby :</label>
-                            <input placeholder="<?php echo $hobby ?>" disabled>
-                        </div>
-                        <div class="cel">
-                            <label>Favourite Foods :</label>
-                            <input placeholder="<?php echo $favorite_food ?>" disabled>
-                        </div>
-                        <div class="cel">
-                            <label>Favourite Games :</label>
-                            <input placeholder="<?php echo $favorite_game ?>" disabled>
-                        </div>
-                        <div class="cel">
-                            <label>Skills :</label>
-                            <input placeholder="<?php echo $skills ?>" disabled>
-                        </div>
-                        <div class="cel">
-                            <label>Dreams :</label>
-                            <input placeholder="<?php echo $dreams ?>" disabled>
-                        </div>
-                        <div class="cel">
-                            <label>Problems :</label>
-                            <input placeholder="<?php echo $problems ?>" disabled>
-                        </div>
-                        <div class="cel">
-                            <label>Comments :</label>
-                            <input placeholder="<?php echo $other_comments ?>" disabled>
-                        </div>
-                    </div>
+                <div class="form_row">
+                    <label>Age:</label>
+                    <input type="number" name="age" placeholder="<?php echo $age ?>">
                 </div>
-            </div>
+                <div class="form_row">
+                    <label>Address:</label>
+                    <input type="text" name="guardian_location" placeholder="<?php echo $guardian_location ?>">
+                </div>
+                <div class="form_row">
+                    <label>Guardian Name:</label>
+                    <input type="text" name="guardian_name" placeholder="<?php echo $guardian_name ?>">
+                </div>
+                <div class="form_row">
+                    <label>Guardian Contact:</label>
+                    <input type="text" name="guardian_contact" placeholder="<?php echo $guardian_contact ?>">
+                </div>
+                <div class="form_row">
+                    <label>Gender :</label>
+                    <select name="gender">
+                        <option value=""><?php echo $gender ?></option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form_row">
+                    <label>Religion :</label>
+                    <select name="religion">
+                        <option value=''><?php echo $religion ?></option>
+                        <option value="muslim">Muslim</option>
+                        <option value="hindu">Hindu</option>
+                        <option value="cristian">Cristian</option>
+                        <option value="buddha">Buddha</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form_row">
+                    <label>Date of Birth :</label>
+                    <input type="date" name="date_of_birth" placeholder="<?php echo $date_of_birth ?>">
+                </div>
+                <div class="form_row">
+                    <label>Family Status :</label>
+                    <select name="family_status">
+                        <option value=''><?php echo $family_status ?></option>
+                        <option value="abondoned">Abondoned</option>
+                        <option value="past Away">Past Away</option>
+                        <option value="unknow">Unknow</option>
+                        <option value="lost">Lost</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form_row">
+                    <label>Physical Condition :</label>
+                    <select name="physical_condition">
+                        <option value=''><?php echo $physical_condition ?></option>
+                        <option value="good">Good</option>
+                        <option value="blind">Blind</option>
+                        <option value="deaf">Deaf</option>
+                        <option value="disabled">Disabled</option>
+                        <option value="autistic">Autistic</option>
+                        <option value="mad">Mad</option>
+                    </select>
+                </div>
+                <div class="form_row">
+                    <label>Education level:</label>
+                    <select name="education_level">
+                        <option value=''><?php echo $education_level ?></option>
+                        <option value="kindergarten">Kindergarten</option>
+                        <option value="elementary">Elementary</option>
+                        <option value="primary_school">Primary School</option>
+                        <option value="junior_high_school">Junior High School</option>
+                        <option value="senior_high_school">Senior High School</option>
+                        <option value="secondary_school">secondary_school</option>
+                    </select>
+                </div>
+                <div class="form_row">
+                    <label>Medical History:</label>
+                    <input type="text" name="medical_history" placeholder="<?php echo $medical_history ?>">
+                </div>
+                <div class="form_row">
+                    <label>Hobby:</label>
+                    <input type="text" name="hobby" placeholder="<?php echo $hobby ?>">
+                </div>
+                <div class="form_row">
+                    <label>Favourite Food:</label>
+                    <input type="text" name="favorite_food" placeholder="<?php echo $favorite_food ?>">
+                </div>
+                <div class="form_row">
+                    <label>Favourite Games:</label>
+                    <input type="text" name="favorite_game" placeholder="<?php echo $favorite_game ?>">
+                </div>
+                <div class="form_row">
+                    <label>Skills:</label>
+                    <input type="text" name="skills" placeholder="<?php echo $skills ?>">
+                </div>
+                <div class="form_row">
+                    <label>Dreams:</label>
+                    <input type="text" name="dreams" placeholder="<?php echo $dreams ?>">
+                </div>
+                <div class="form_row">
+                    <label>Problems:</label>
+                    <input type="text" name="problems" placeholder="<?php echo $problems ?>">
+                </div>
+                <div class="form_row">
+                    <label>Comments:</label>
+                    <input type="text" name="other_comments" placeholder="<?php echo $other_comments ?>">
+                </div>
+                <div class="form_row">
+                    <label>adoption_status :</label>
+                    <input type="text" name="adoption_status" placeholder="<?php echo $adoption_status ?>" disabled>
+                </div>
+                <div class="form_row">
+                    <label>Image:</label>
+                    <input type="file" name="image" accept="image/*">
+                </div>
+                <input type="hidden" name="orphan_id" value="<?php echo $row['orphan_id'] ?>">
+                <input type="hidden" name="guardian_id" value="<?php echo $row['guardian_id'] ?>">
+                <div class="btn">
+                    <button type="submit" name="update">Update</button>
+                </div>
+
+            </form>
         </div>
+
     </div>
 
     <?php include "../../components/footer.php" ?>

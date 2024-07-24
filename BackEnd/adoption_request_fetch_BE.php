@@ -20,7 +20,7 @@ $total_adoptions = $row2['total_adoptions'];
 
 
 
-$query3 = "SELECT orl.first_name, orl.last_name, orl.orphan_id, ul.user_name, ul.user_id ,ad.adoption_id, ad.status
+$query3 = "SELECT orl.first_name, orl.orphan_id, ul.user_name, ul.user_id ,ad.adoption_id, ad.status
                     FROM adoptions ad
                     JOIN orphan_list orl ON ad.orphan_id = orl.orphan_id
                     JOIN user_list ul ON ad.acc_id = ul.acc_id
@@ -36,7 +36,6 @@ if (mysqli_num_rows($result3) > 0) {
             'orphan_id' => $row3['orphan_id'],
             'user_id' => $row3['user_id'],
             'first_name' => $row3['first_name'],
-            'last_name' => $row3['last_name'],
             'user_name' => $row3['user_name'],
             'adoption_id' => $row3['adoption_id']
         );

@@ -10,7 +10,7 @@ $result = mysqli_query($con, $query);
 if (mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
         echo '<div class="blog-post">';
-        echo '<div class="blog-post_img"><img src="/' . $row['post_image'] . '" alt="' . $row['post_title'] . '"></div>';
+        echo '<div class="blog-post_img"><img src="/UserImage/blogpic/' . $row['post_image'] . '" alt="' . $row['post_title'] . '"></div>';
         echo '<div class="blog-post_info">';
         echo '<h1 class="blog-post_title">' . $row['post_title'] . '</h1>';
         echo '<div class="blog-post_date">';

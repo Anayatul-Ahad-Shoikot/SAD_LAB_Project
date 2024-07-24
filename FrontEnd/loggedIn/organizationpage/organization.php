@@ -27,7 +27,7 @@ if ($unreadNotificationsResult) {
     <link rel="stylesheet" href="/FrontEnd/css/notification.css">
     <link rel="stylesheet" href="/FrontEnd/css/feedback.css">
     <link rel="icon" href="/Icons&logos/LOGO.png" type="image/x-icon">
-    <title>CareSenerity | Home</title>
+    <title>CareSenerity | Organization</title>
 </head>
 
 <body>
@@ -52,15 +52,12 @@ if ($unreadNotificationsResult) {
     </div>
 
     <div class="container">
-
       <div class="options">
-              <a href="organization.php" class="btn">back</a>
               <form action="#" method="GET">
                 <input type="text" name="query" placeholder="Search Organizations...">
                 <button type="submit"><i class="ri-search-line"></i></button>
               </form>
       </div>
-
       <div class="organization-container">
         <?php 
               if (isset($_GET['query'])){

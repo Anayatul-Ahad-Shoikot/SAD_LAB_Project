@@ -35,7 +35,7 @@
             <span class="h-bar"></span>
             <li><a href="#">Join Us</a></li>
             <span class="h-bar"></span>
-            <li><a href="#">About Us</a></li>
+            <li><a href="/FrontEnd/loggedIn/userpage/aboutus.php">About Us</a></li>
             <li class="icon" onclick="toggleNotifi()">
                 <img src="/Icons&logos/bell.png"><span style="background-color: <?php echo ($unreadCount > 0) ? 'red' : 'transparent'; ?>">00</span>
             </li>

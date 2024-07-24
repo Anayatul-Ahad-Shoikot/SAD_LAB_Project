@@ -22,10 +22,10 @@
     <div class="bottom-nav">
         <div class="logo">
             <img src="/Icons&logos/LOGO.png" height="35" alt="Logo">
-            <a href="#"><span class="icon first">Care</span><span class="icon second">Serenity</span></a>
+            <a href="/FrontEnd/loggedOut/index.php"><span class="icon first">Care</span><span class="icon second">Serenity</span></a>
         </div>
         <ul class="main-nav">
-            <li><a href="#">Home</a></li>
+            <li><a href="/FrontEnd/loggedOut/index.php">Home</a></li>
             <span class="h-bar"></span>
             <li><a href="#">Services</a></li>
             <span class="h-bar"></span>

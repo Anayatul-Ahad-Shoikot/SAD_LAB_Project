@@ -1,5 +1,6 @@
 <?php
 include("../../../BackEnd/see_organization_profile_BE.php");
+session_start();
 $acc_id = $_SESSION['acc_id'];
 $fetchUnreadNotificationsQuery = "SELECT COUNT(*) as unread_count FROM notifications WHERE is_read = 0 AND user_id = (SELECT user_id FROM user_list WHERE acc_id = $acc_id)";
 $unreadNotificationsResult = mysqli_query($con, $fetchUnreadNotificationsQuery);
@@ -21,7 +22,7 @@ if ($unreadNotificationsResult) {
     <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
     <link rel="stylesheet" href="/FrontEnd/css/colors.css">
     <link rel="stylesheet" href="/FrontEnd/css/navbar.css">
-    <link rel="stylesheet" href="/FrontEnd/css/profile.css">
+    <link rel="stylesheet" href="/FrontEnd/css/see_organization_profile.css">
     <link rel="stylesheet" href="/FrontEnd/css/footer.css">
     <link rel="stylesheet" href="/FrontEnd/css/notification.css">
     <link rel="stylesheet" href="/FrontEnd/css/feedback.css">
@@ -52,77 +53,35 @@ if ($unreadNotificationsResult) {
 
 
     <div class="container">
-        <div class="left_portion">
-            <div class="userDetails1">
-                <div class="profile">
-                    <figure><img src= "../../../UserImage/accountPic/<?php echo $org_logo ?>"></figure>
-                </div>
-                <div class="userDetails">
-                    <div class="userName">
-                        <h1><?php echo $org_name ?></h1>
-                    </div>
-                    <div class="map">
-                        <i class="ri-map-pin-fill ri"></i>
-                        <p><?php echo $org_location ?></p>
-                    </div>
-                    <div class="inner_container">
-                        <div class="map">
-                            <i class='bx bxs-send'></i>
-                            <p>Messages</p>
-                        </div>
-                        <div class="map">
-                            <i class='bx bxs-error-alt'></i>
-                            <p>Reports</p>
-                        </div>
-                    </div>
-                </div>
+    <div class="accounnt-information-container">
+            <div class="account-picture">
+                <img src="../../../UserImage/accountPic/<?php echo $org_logo ?>" alt="profile" width="250px" height="250px">
             </div>
-            <div class="work">
-                <div class="tabs">
-                    <i class='bx bxs-briefcase'></i>
-                    <p>Motive</p>
-                </div>
-                <div class="primary">
-                    <h1><?php echo $org_vision ?></h1>
-                    <p><?php echo $org_description ?></p>
-                </div>
+            <div class="account-data">
+                    <h1><?php echo $org_name ?></h1>
+                    <p>Location : <?php echo $org_location ?></p>
+                    <p>Email : <?php echo $org_email ?></p>
+                    <p>Contact : <?php echo $org_phone ?></p>
+                    <p>Established : <?php echo $established ?>, Joined : <?php echo $acc_join_date ?></p>
+                    <p>Account Type : <?php echo $role ?></p>
+            </div>
+            <div class="biography">
+                <h1><?php echo $org_vision ?></h1>
+                <p><?php echo $org_description ?></p>
             </div>
         </div>
+
         <div class="options">
-            <a href="#" class="btn x">Oldage</a>
-            <a href="/Root/Orphanage/USER-PERSPECTIVE/O_UP_ORPHAN_DASH.php?org_id=<?php echo $org_id ?>" class="btn y">Orphanage</a>
+            <a href="organization.php" class="btn">back</a>
+            <a href="chat.php" class="btn">Inbox</a>
+            <a href="see_organization_orphanage.php?org_id=<?php echo $org_id ?>" class="btn">Orphanage</a>
         </div>
 
 
-        <div class="right_portion">
-            <div class="plate">
-                <h1 class="heading">Basic Information -</h1>
-                <div class="info_box">
-                    <div class="top">
-                        <div class="cel">
-                            <label>Established :</label>
-                            <input placeholder="<?php echo $established ?>" disabled>
-                        </div>
-                        <div class="cel">
-                            <label>Phone :</label>
-                            <input placeholder="<?php echo $org_phone ?>" disabled>
-                        </div>
-                        <div class="cel">
-                            <label>Email :</label>
-                            <input placeholder="<?php echo $org_email ?>" disabled>
-                        </div>
-                        <div class="cel">
-                            <label>Web Site :</label>
-                            <input placeholder="<?php echo $org_website ?>" disabled>
-                        </div>
-                        <div class="cel">
-                            <label>Address :</label>
-                            <input placeholder="<?php echo $org_location ?>" disabled>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="short-report">
+            <h1>Need idea what to put here</h1>
         </div>
+
     </div>
 
 

@@ -30,7 +30,7 @@ $total_amount_received = $row3['total_amount_received'];
 
 
 
-$query4 = "SELECT ul.user_id, ul.user_name, orl.first_name, orl.last_name, d.amount, d.receiver_type FROM donations AS d
+$query4 = "SELECT ul.user_id, ul.user_name, orl.first_name, d.amount, d.receiver_type FROM donations AS d
                 LEFT JOIN user_list AS ul ON d.donor_id = ul.user_id
                 LEFT JOIN orphan_list AS orl ON d.receiver_id = orl.orphan_id
                 WHERE (d.receiver_type = 'orphan' AND orl.org_id = $org_id_current)
@@ -44,7 +44,6 @@ if (mysqli_num_rows($result4) > 0) {
             'user_name' => $row4['user_name'],
             'user_id' => $row4['user_id'],
             'first_name' => $row4['first_name'],
-            'last_name' => $row4['last_name'],
             'amount' => $row4['amount'],
             'receiver_type' => $row4['receiver_type']
         );

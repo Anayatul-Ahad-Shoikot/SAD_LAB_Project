@@ -28,6 +28,4 @@ if (isset($_GET['post_id'])) {
     } else {
         echo 'Blog post not found.';
     }
-} else {
-    echo "Error";
 }

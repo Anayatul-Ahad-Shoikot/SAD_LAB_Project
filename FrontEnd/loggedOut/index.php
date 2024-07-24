@@ -1,5 +1,6 @@
 <?php 
     include '../../BackEnd/index_BE.php' ;
+    include '../../BackEnd/blog_fetch_BE.php';
 ?>
 
 <!DOCTYPE html>
@@ -112,6 +113,7 @@
         </div>
     </div>
     <div id="line"></div>
+    
     <div class="donations">
         <div class="section-title">
             <p id="highlight">Recent raised funds</p>
@@ -122,18 +124,18 @@
                     <img src="/UserImage/donationPic/c1.jpg" alt="">
                     <div class="amount">
                         <span class="raised">
-                            RAISED: $764
+                            Raised : $764
                         </span>
                         <span class="target">
-                            TARGET: $1500
+                            Goal : $1500
                         </span>
+                        <button class="btn">Donate</button>
                     </div>
                 </div>
                 <div class="card-details">
                     <h4>CONNECTING THE PEOPLE</h4>
-                    <p>he point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                    <p>he point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p>
                 </div>
-                <button class="btn"><i class="fas fa-hand-holding-usd"></i>Donate</button>
             </div>
 
             <div class="card">
@@ -146,14 +148,13 @@
                         <span class="target">
                             TARGET: $150000
                         </span>
+                        <button class="btn">Donate</button>
                     </div>
                 </div>
                 <div class="card-details">
                     <h4>Flood fund</h4>
                     <p>due to recent foold we need funs for poor people. they are striving.</p>
                 </div>
-
-                <button class="btn"><i class="fas fa-hand-holding-usd"></i>Donate</button>
             </div>
 
             <div class="card">
@@ -166,14 +167,13 @@
                         <span class="target">
                             TARGET: $1500
                         </span>
+                        <button class="btn">Donate</button>
                     </div>
                 </div>
                 <div class="card-details">
                     <h4>CONNECTING THE PEOPLE</h4>
                     <p>he point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
                 </div>
-
-                <button class="btn"><i class="fas fa-hand-holding-usd"></i>Donate</button>
             </div>
 
             <div class="card">
@@ -186,14 +186,13 @@
                         <span class="target">
                             TARGET: $1500
                         </span>
+                        <button class="btn">Donate</button>
                     </div>
                 </div>
                 <div class="card-details">
                     <h4>CONNECTING THE PEOPLE</h4>
                     <p>he point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
                 </div>
-
-                <button class="btn"><i class="fas fa-hand-holding-usd"></i>Donate</button>
             </div>
 
             <div class="card">
@@ -206,14 +205,13 @@
                         <span class="target">
                             TARGET: $1500
                         </span>
+                        <button class="btn">Donate</button>
                     </div>
                 </div>
                 <div class="card-details">
                     <h4>CONNECTING THE PEOPLE</h4>
                     <p>he point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
                 </div>
-
-                <button class="btn"><i class="fas fa-hand-holding-usd"></i>Donate</button>
             </div>
 
             <div class="card">
@@ -226,14 +224,13 @@
                         <span class="target">
                             TARGET: $1500
                         </span>
+                        <button class="btn">Donate</button>
                     </div>
                 </div>
                 <div class="card-details">
                     <h4>CONNECTING THE PEOPLE</h4>
                     <p>he point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
                 </div>
-
-                <button class="btn"><i class="fas fa-hand-holding-usd"></i>Donate</button>
             </div>
 
             <div class="card">
@@ -246,14 +243,13 @@
                         <span class="target">
                             TARGET: $1500
                         </span>
+                        <button class="btn">Donate</button>
                     </div>
                 </div>
                 <div class="card-details">
                     <h4>CONNECTING THE PEOPLE</h4>
                     <p>he point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
                 </div>
-
-                <button class="btn"><i class="fas fa-hand-holding-usd"></i>Donate</button>
             </div>
 
             <div class="card">
@@ -266,14 +262,13 @@
                         <span class="target">
                             TARGET: $1500
                         </span>
+                        <button class="btn">Donate</button>
                     </div>
                 </div>
                 <div class="card-details">
                     <h4>CONNECTING THE PEOPLE</h4>
                     <p>he point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
                 </div>
-
-                <button class="btn"><i class="fas fa-hand-holding-usd"></i>Donate</button>
             </div>
 
             <div class="card">
@@ -286,14 +281,13 @@
                         <span class="target">
                             TARGET: $1500
                         </span>
+                        <button class="btn">Donate</button>
                     </div>
                 </div>
                 <div class="card-details">
                     <h4>CONNECTING THE PEOPLE</h4>
                     <p>he point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
                 </div>
-
-                <button class="btn"><i class="fas fa-hand-holding-usd"></i>Donate</button>
             </div>
 
             <div class="card">
@@ -306,19 +300,19 @@
                         <span class="target">
                             TARGET: $1500
                         </span>
+                        <button class="btn">Donate</button>
                     </div>
                 </div>
                 <div class="card-details">
                     <h4>CONNECTING THE PEOPLE</h4>
                     <p>he point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
                 </div>
-
-                <button class="btn"><i class="fas fa-hand-holding-usd"></i>Donate</button>
             </div>
-
         </div>
     </div>
+
     <div id="line"></div>
+
     <div class="AboutUs">
         <div class="descriptionbox">
             <div class="session-title">
@@ -345,39 +339,14 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ipsum sit nibh amet egestas tellus.</p>
         </div>
         <div class="cards-container">
-
-            <div class="blog-card">
-                <img src="/UserImage/blogpic/slide-02.jpg" alt="">
-                <div class="blog-details">
-                    <h1 class="blog-title">Top 10 Trends in Webdesign sit nibh amet Mauris ipsum sit nibh</h1>
-                    <p class="user"><i class="bi bi-person"></i>Anayatul Ahad</p>
-                    <p class="date">30 Nov 2002</p>
-                </div>
-            </div>
-
-            <div class="blog-card">
-                <img src="/UserImage/blogpic/blog_04.jpg" alt="">
-                <div class="blog-details">
-                    <h1 class="blog-title">Top 10 Trends in Webdesign sit nibh amet Mauris ipsum sit nibh</h1>
-                    <p class="user"><i class="bi bi-person"></i>Mehbuba Prova</p>
-                    <p class="date">6 Jun 2002</p>
-                </div>
-            </div>
-
-            <div class="blog-card">
-                <img src="/UserImage/blogpic/blog_02.jpg" alt="">
-                <div class="blog-details">
-                    <h1 class="blog-title">Top 10 Trends in Webdesign sit nibh amet Mauris ipsum sit nibh</h1>
-                    <p class="user"><i class="bi bi-person"></i>Afifa Mehjabin Queen</p>
-                    <p class="date">10 Jan 2003</p>
-                </div>
-            </div>
-
+            <?php
+                include('../../BackEnd/blog_show_for_landing_page.php');
+            ?>
         </div>
     </div>
     <div id="line"></div>
     <div style="margin-top:0px;" class="row no-margin">
-        <iframe style="width:100%" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d249759.19784092825!2d79.10145254589841!3d12.009924873581818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1448883859107"  height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <!-- <iframe style="width:100%" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d249759.19784092825!2d79.10145254589841!3d12.009924873581818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1448883859107"  height="450" frameborder="0" style="border:0" allowfullscreen></iframe> -->
     </div>
     <div class="contactUs">
         <div class="contact_form">

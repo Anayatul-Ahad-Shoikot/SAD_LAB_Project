@@ -35,7 +35,7 @@ if ($unreadNotificationsResult) {
 
   <div class="blog-details-container">
     <div class="IMG">
-      <img src="../../../<?php echo $post_image ?>" alt="image name here">
+      <img src="/UserImage/blogpic/<?php echo $post_image ?>" alt="image name here">
     </div>
 
     <div class="blog-details">

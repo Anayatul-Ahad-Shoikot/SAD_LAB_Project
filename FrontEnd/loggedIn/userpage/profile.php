@@ -51,90 +51,32 @@ if ($unreadNotificationsResult) {
     </div>
 
     <div class="container">
-        <div class="left_portion">
-            <div class="userDetails1">
-                <div>
-                    <img src="../../..<?php echo $user_image ?>" alt="profile" width="250px" height="250px">
+        <div class="accounnt-information-container">
+                <div class="account-picture">
+                    <img src="../../../UserImage/accountPic/<?php echo $user_image ?>" alt="profile">
                 </div>
-                <div class="userDetails">
-                    <div class="userName">
-                        <h1><?php echo $user_name ?></h1>
-                    </div>
-                    <div class="map">
-                        <i class="ri-map-pin-fill ri"></i>
-                        <p><?php echo $user_address, ", ", $user_location ?></p>
-                    </div>
-                    <div class="map">
-                        <i class='bx bxs-briefcase'></i>
-                        <p><?php echo $role ?></p>
-                    </div>
-                    <div class="inner_container">
-                        <div class="map">
-                            <i class='bx bxs-send'></i>
-                            <a href="/Root/Chats1.2/inbox_list.php">Messages</a>
-                        </div>
-                        <div class="map">
-                            <i class='bx bxs-error-alt'></i>
-                            <p>Reports</p>
-                        </div>
-                    </div>
+                <div class="account-data">
+                    <h1><?php echo $user_name ?></h1>
+                    <p>Location : <?php echo $user_address, ", ", $user_location ?></p>
+                    <p>Email : <?php echo $acc_email ?></p>
+                    <p>Contact : <?php echo $user_contact ?></p>
+                    <p>Occupation : <?php echo $user_job ?></p>
+                    <p>Account Type : <?php echo $role ?></p>
                 </div>
-            </div>
-            <div class="work">
-                <div class="tabs">
-                    <i class='bx bxs-briefcase'></i>
-                    <p>Occupation</p>
+                <div class="biography" style="visibility: hidden;">
+                    <h1><?php echo $org_vision ?></h1>
+                    <p><?php echo $org_description ?></p>
                 </div>
-                <div class="primary">
-                    <h1><?php echo $user_job ?></h1>
-                </div>
-            </div>
         </div>
 
-        <div class="right_portion">
-            <div class="plate">
-                <h1 class="heading">Basic Informations </h1>
-                <div class="info_box">
-                    <div class="top">
-                        <div class="cel">
-                            <label>Account Name :</label>
-                            <input placeholder="<?php echo $acc_name ?>" disabled>
-                        </div>
-                        <div class="cel">
-                            <label>Account Type :</label>
-                            <input placeholder="<?php echo $role ?>" disabled>
-                        </div>
-                        <div class="cel">
-                            <label>Full Name :</label>
-                            <input placeholder="<?php echo $user_name ?>" disabled>
-                        </div>
-                        <div class="cel">
-                            <label>Gender :</label>
-                            <input placeholder="<?php echo $user_gender ?>" disabled>
-                        </div>
-                        <div class="cel">
-                            <label>Date of Birth :</label>
-                            <input placeholder="<?php echo $user_birth ?>" disabled>
-                        </div>
-                        <div class="cel">
-                            <label>NID Number :</label>
-                            <input placeholder="<?php echo $user_NID ?>" disabled>
-                        </div>
-                        <div class="cel">
-                            <label>Since :</label>
-                            <input placeholder="<?php echo $acc_join_date ?>" disabled>
-                        </div>
-                        <div class="cel">
-                            <label>Contact Number :</label>
-                            <input placeholder="<?php echo $user_contact ?>" disabled>
-                        </div>
-                        <div class="cel">
-                            <label>Web Site :</label>
-                            <input placeholder="<?php echo $user_website ?>" disabled>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="options">
+            <a href="chat_list.php" class="btn">Chats</a>
+            <a href="volunteer.php" class="btn">Volunteers</a>
+            <a href="profile_edit.php" class="btn">Profile Info</a>
+        </div>
+
+        <div class="short-report">
+            <h1>Need idea what to put here</h1>
         </div>
     </div>
 

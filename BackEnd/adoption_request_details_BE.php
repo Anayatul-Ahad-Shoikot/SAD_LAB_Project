@@ -5,7 +5,6 @@ session_start();
 $adoption_id = $_GET['adoption_id'];
 $user_name = $_GET['user_name'];
 $first_name = $_GET['first_name'];
-$last_name = $_GET['last_name'];
 
 $query1 = "SELECT * FROM adoptions WHERE adoption_id = $adoption_id";
 $result1 = mysqli_query($con, $query1);
@@ -30,7 +29,7 @@ $result2 = mysqli_query($con, $query2);
 $row2 = mysqli_fetch_assoc($result2);
 $aplicant_image = $row2['user_image'];
 
-$query3 = "SELECT orphan_image FROM orphan_list WHERE first_name = '$first_name' AND last_name = '$last_name'";
+$query3 = "SELECT orphan_image FROM orphan_list WHERE first_name = '$first_name'";
 $result3 = mysqli_query($con, $query3);
 $row3 = mysqli_fetch_assoc($result3);
 $orphan_image = $row3['orphan_image'];

@@ -106,7 +106,7 @@
             <h2><a href="create_blog.php">CreatePost</a></h2>
         </div>
         <?php
-        include('../../../BackEnd/blog_show_BE.php');
+            include('../../../BackEnd/blog_show_BE.php');
         ?>
     </div>
 

@@ -1,5 +1,5 @@
 .container {
-    margin: 3% 15%;
+    margin: 3% 25%;
     padding: 3rem;
     background-color: #fff;
     border-radius: 15px;
@@ -14,38 +14,36 @@
     margin: 30px 0px;
     text-shadow: 2px 5px 30px hsl(0, 0%, 100%);
 }
-
 .container form {
     display: flex;
     flex-direction: column;
 }
-
-.container label {
-    font-size: small;
-    color: gray;
-    padding-bottom: -5px;
+form .form_row{
+    width: 100%;
+    display: flex;
 }
-
-.container input {
-    margin: 0 0 .7rem 0;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+.form_row label {
+    width: 30%;
+    font-size: 14px;
 }
-
-.container select {
-    color: gray;
-    padding: 8px;
-    border-color: gray;
-    border-radius: 8px;
+.form_row input , select{
+    background-color: #f8f8f8;
+    margin-bottom: 20px;
+    width: -webkit-fill-available;
+    padding: .375rem .75rem;
+    font-size: 15px;
+    color: #212529;
+    border: 1px solid #ced4da;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
-
 .container .btn {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
 .container button {
     width: 50%;
     background-color: var(--primary-color-dark);
@@ -59,14 +57,6 @@
     cursor: pointer;
     margin-bottom: 10px;
 }
-
 button:hover {
     background-color: var(--primary-color-light);
-}
-
-.container .opt {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    padding: 10px;
 }

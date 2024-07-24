@@ -78,9 +78,11 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 45px;
+    gap: 95px;
     width: -webkit-fill-available;
-    padding: 3rem 0rem 18rem 0rem;
+    padding: 3rem 0rem;
+    background: rgb(255, 255, 255, 0.2);
+    backdrop-filter: blur(80px);
 }
 
 #info_cell {
@@ -107,13 +109,12 @@
     margin-top: 5rem;
     display: flex;
     flex-direction: column;
-    padding: 3% 15%;
+    margin: 3% 15%;
 }
 
 .section-title {
     text-align: center;
-    padding-bottom: 3.5%;
-    margin-bottom: 15px;
+    margin-bottom: 5%;
 }
 
 #highlight {
@@ -133,7 +134,7 @@
 
 .service-table .part {
     text-align: center;
-    padding-bottom: 25px;
+    padding: 45px 60px;
     transition: 1s;
 }
 
@@ -168,13 +169,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 3% 15%;
-    background-color: lightcyan;
-    box-shadow: 0px 130px 200px 60px lightcyan;
+    padding: 3% 5%;
+    background-color: rgba(132, 189, 208, 0.493);
 }
 
 .donations .cards-container {
-    width: 1200px;
+    width: 95%;
     display: flex;
     align-items: center;
     gap: 20px;
@@ -191,27 +191,22 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 25px;
-    box-shadow: 0px 0px 17px 15px rgb(0, 0, 0, 0.1);
-    border-radius: 50px 50px 50px 0px;
-    border-left: 2px solid rgb(0, 0, 0, 0.1);
-    border-bottom: 2px solid rgb(0, 0, 0, 0.5);
+    padding: 25px 6px;
+    border-radius: 4px;
     background-color: #ffffff;
+    border: 1.5px solid darkgray;
 }
 
 .card-img {
     width: 300px;
     display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 30px;
-    margin-bottom: 20px;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .card-img .amount {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
     gap: 5px;
 }
 
@@ -228,11 +223,8 @@
 }
 
 .card img {
-    padding: 5px;
     width: 150px;
     height: 150px;
-    border: 1px solid rgb(0, 0, 0, 0.2);
-    border-radius: 50%;
     box-shadow: 0px 0px 17px 15px rgb(0, 0, 0, 0.1);
 }
 
@@ -253,12 +245,11 @@
 }
 
 .card button {
-    width: 50%;
-    height: 30px;
-    background-color: var(--primary-color-light);
+    height: 28px;
+    background-color: rgb(21, 21, 21);
     border: none;
     color: white;
-    border-radius: 5px;
+    border-radius: 6px;
 
 }
 
@@ -294,32 +285,54 @@
 
 
 
+
+
+
+
+
+
+
+
+
 .blog {
-    padding: 3% 15%;
-    background-color: lightpink;
-    box-shadow: 0px -130px 200px 60px lightpink;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3% 5%;
+    background-color: rgb(247, 212, 217);
+}
+
+.blog h2{
+    color: var(--primary-color-dark) !important;
 }
 
 .blog .cards-container {
-    width: 1200px;
+    width: 95%;
     display: flex;
     align-items: center;
     gap: 20px;
     overflow: auto;
     padding: 30px 0px;
 }
+.cards-container::-webkit-scrollbar {
+    display: none;
+}
 
-.blog-card {
-    width: 330px;
-    height: auto;
+.cards-container .blog-card {
+    width: 400px;
+    height: 360px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 10px;
+    background: white;
+    padding: 10px 15px;
 }
 
 .blog-card img {
-    width: 100%;
-    height: auto;
+    width: 250px;
+    height: 215px;
 }
 
 .blog-title {
@@ -332,6 +345,15 @@
     color: #71717a;
 }
 
+.blog-card a {
+    width: 100px;
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-align: center;
+}
 
 
 

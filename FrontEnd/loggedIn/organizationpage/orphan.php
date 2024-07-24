@@ -72,9 +72,7 @@ mysqli_close($con);
         </div>
         
         <div class="options">
-            <a href="chat.php" class="btn">Chats</a>
-            <a href="orphan.php" class="btn">Orphanage</a>
-            <a href="profile.php" class="btn">Profile</a>
+            <a href="profile.php" class="btn">back</a>
             <a href="REMOVED_ORPHAN_DASH.php" class="btn">Removed Child</a>
             <a href="orphan_add.php" class="btn">Add Child</a>
             <form action="#" method="GET">

@@ -53,7 +53,6 @@ if ($unreadNotificationsResult) {
     </div>
 
     <div class="container">
-        
         <div class="accounnt-information-container">
             <div class="account-picture">
                 <img src="../../../UserImage/accountPic/<?php echo $org_logo ?>" alt="profile" width="250px" height="250px">
@@ -73,7 +72,7 @@ if ($unreadNotificationsResult) {
         </div>
 
         <div class="options">
-            <a href="chat.php" class="btn">Chats</a>
+            <a href="chat_list.php" class="btn">Chats</a>
             <a href="orphan.php" class="btn">Orphanage</a>
             <a href="volunteer.php" class="btn">Volunteers</a>
             <a href="profile_edit.php" class="btn">Profile Info</a>
@@ -132,13 +131,13 @@ if ($unreadNotificationsResult) {
                                                 <a href="see_user_profile.php?user_id=' . $names['user_id'] . '">' . $names['user_name'] . '</a>
                                             </td>
                                             <td>
-                                                <a href="orphan_profile.php?orphan_id=' . $names['orphan_id'] . '">' . $names['first_name'] . ' ' . $names['last_name'] . '</a>
+                                                <a href="orphan_profile.php?orphan_id=' . $names['orphan_id'] . '">' . $names['first_name'] . '</a>
                                             </td>
                                             <td>
                                                 <div class="dropdown">
                                                     <button onclick="toggleDropdown(this)" class="dropbtn">Actions</button>
                                                     <div id="myDropdown" class="dropdown-content">
-                                                        <a href="adoption_request_details.php?adoption_id=' . $names['adoption_id'] . '&user_name=' . $names['user_name'] . '&first_name=' . $names['first_name'] . '&last_name=' . $names['last_name'] . '">View</a>
+                                                        <a href="adoption_request_details.php?adoption_id=' . $names['adoption_id'] . '&user_name=' . $names['user_name'] . '&first_name=' . $names['first_name'] . '">View</a>
                                                         <a href="/Root/D & A/Org_donation_adoption/ACCEPT_ADOPTION_REQUEST_BE.php?adoption_id=' . $names['adoption_id'] . '&user_id=' . $names['user_id'] . '&orphan_id=' . $names['orphan_id'] . '">Accept</a>
                                                         <a href="reject?adoption_id="' . $names['adoption_id'] . '">Reject</a>
                                                     </div>

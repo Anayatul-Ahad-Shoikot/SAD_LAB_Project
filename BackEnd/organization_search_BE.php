@@ -9,29 +9,31 @@
             $result = mysqli_query($con, $query);
             if (mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
-                    echo '<div class="blog-post">';
+                    echo '<div class="org-card">';
                     echo '<div class="x">';
-                    echo '<div class="blog-post_img"><img src="/UserImage/accountPic/' . $row['org_logo'] . '" alt="img"></div>';
-                    echo '<div class="blog-post_info">';
-                    echo '<h1 class="blog-post_title">' . $row['org_name'] . '</h1>';
-                    echo '<div class="blog-post_date">';
-                    echo '<span>Phone : ' . $row['org_phone'] . '</span>';
-                    echo '<span> &emsp; Email : ' . $row['org_email'] . '</span>';
+
+                        echo '<div class="org_img"><img src="/UserImage/accountPic/' . $row['org_logo'] . '" alt=""></div>';
+                        
+                        echo '<div class="org_info">';
+                            echo '<h1 class="org_title">' . $row['org_name'] . '</h1>';
+                            echo '<p class="org_vision">' . $row['org_vision'] . '</p>';
+                            echo '<p>Phone : ' . $row['org_phone'] . '</p>';
+                            echo '<p>Email : ' . $row['org_email'] . '</p>';
+                        echo '</div>';
                     echo '</div>';
-                    echo '<p class="blog-post_content">' . $row['org_description'] . '</p>';
+
+                    echo '<div class="action_button">';
+                        if ($role == 'org') {
+                            echo '<a href="/FrontEnd/loggedIn/organizationpage/see_organization_profile.php?org_id=' . $row['org_id'] . '"> Visit </a>';
+                            echo '<a href="/Root/D & A/Donations/U_DONATION_DASH.php?org_id=' . $row['org_id'] . '"> Donate </a>';
+                        } else if ($role == 'admin') {
+                            echo '<a href="/Root/Org_Page/O_VIEW_ORG.php?org_id=' . $row['org_id'] . '"> Visit </a>';
+                        } else {
+                            echo '<a href="/FrontEnd/loggedIn/userpage/see_organization_profile.php?org_id=' . $row['org_id'] . '"> Visit </a>';
+                            echo '<a href="/Root/D & A/Donations/U_DONATION_DASH.php?org_id=' . $row['org_id'] . '"> Donate </a>';
+                        }
                     echo '</div>';
-                    echo '</div>';
-                    echo '<div class="info">';
-                    if ($role == 'org') {
-                        echo '<a href="/Root/Org_Page/O_VIEW_ORG.php?org_id=' . $row['org_id'] . '"  class="blog-post_cta" > Visit </a>';
-                    } else if ($role == 'user') {
-                        echo '<a href="/Root/Org_Page/U_VIEW_ORG.php?org_id=' . $row['org_id'] . '"  class="blog-post_cta" > Visit </a>';
-                        echo '<a href="/Root/D & A/Donations/U_DONATION_DASH.php?org_id=' . $row['org_id'] . '" class="blog-post_cta" > Donate </a>';
-                    } else {
-                        echo '<a href="#"  class="blog-post_cta" > View </a>';
-                    }
-                    echo '</div>';
-                    echo '</div>';
+                echo '</div>';
                 }
             } else {
                 echo '<p>No organizations found.</p>';

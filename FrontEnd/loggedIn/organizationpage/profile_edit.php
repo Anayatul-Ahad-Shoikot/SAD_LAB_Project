@@ -52,31 +52,43 @@ if ($unreadNotificationsResult) {
 
 
     <div class="container">
-        <h2>Edit Profile</h2>
+        <h2>Profile Information</h2>
         <form action="../../../BackEnd/Organization_profile_edit_BE.php" method="post" enctype="multipart/form-data">
-            <label>Organization's Name :</label>
-            <input type="text" name="org_name" placeholder="<?php echo $org_name ?>">
-            <label>Description :</label>
-            <input type="text" name="org_description" placeholder="<?php echo $org_description ?>">
-            <label>Organization's Email :</label>
-            <input type="text" name="org_email" placeholder="<?php echo $org_email ?>">
-            <label>Organization Contact :</label>
-            <input type="text" name="org_phone" placeholder="<?php echo $org_phone ?>">
-            <label>Orgamization's Address :</label>
-            <input type="text" name="org_location" placeholder="<?php echo $org_location ?>">
-            <label>Organization's Website :</label>
-            <input type="text" name="org_website" placeholder="<?php echo $org_website ?>">
-            <label>Vision :</label>
-            <input type="text" name="org_vision" placeholder="<?php echo $org_vision ?>">
-            <div class="opt">
-                <div class="part">
-                    <label>Orginization's Logo :</label>
-                    <input type="file" name="image" accept="image/*">
-                </div>
-                <div class="part">
-                    <label>Established At :</label>
-                    <input type="date" name="established">
-                </div>
+            <div class="form_row">
+                <label>Organization's Name :</label>
+                <input type="text" name="org_name" placeholder="<?php echo $org_name ?>">
+            </div>
+            <div class="form_row">
+                <label>Description :</label>
+                <input type="text" name="org_description" placeholder="<?php echo $org_description ?>">
+            </div>
+            <div class="form_row">
+                <label>Organization's Email :</label>
+                <input type="text" name="org_email" placeholder="<?php echo $org_email ?>">
+            </div>
+            <div class="form_row">
+                <label>Organization Contact :</label>
+                <input type="text" name="org_phone" placeholder="<?php echo $org_phone ?>">
+            </div>
+            <div class="form_row">
+                <label>Orgamization's Address :</label>
+                <input type="text" name="org_location" placeholder="<?php echo $org_location ?>">
+            </div>
+            <div class="form_row">
+                <label>Organization's Website :</label>
+                <input type="text" name="org_website" placeholder="<?php echo $org_website ?>">
+            </div>
+            <div class="form_row">
+                <label>Vision :</label>
+                <input type="text" name="org_vision" placeholder="<?php echo $org_vision ?>">
+            </div>
+            <div class="form_row">
+                <label>Orginization's Logo :</label>
+                <input type="file" name="image" accept="image/*">
+            </div>
+            <div class="form_row">
+                <label>Established At :</label>
+                <input type="date" name="established">
             </div>
             <div class="btn">
                 <button type="submit" name="update">Update</button>

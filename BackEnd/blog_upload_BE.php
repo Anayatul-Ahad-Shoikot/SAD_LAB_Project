@@ -23,7 +23,7 @@ if (!isset($_SESSION['acc_id']) && !isset($_SESSION['role'])) {
         $query = "INSERT INTO blog_post (acc_id, post_title, post_content, post_category, post_image, published) VALUES (?, ?, ?, ?, ?, ?)";
         $stmt = mysqli_prepare($con, $query);
         if ($stmt) {
-            mysqli_stmt_bind_param($stmt, "isssss", $acc_id, $post_title, $post_content, $post_category, $image_path, $date);
+            mysqli_stmt_bind_param($stmt, "isssss", $acc_id, $post_title, $post_content, $post_category, $new_image_name, $date);
             if (mysqli_stmt_execute($stmt)) {
                 $post_id = mysqli_insert_id($con);
                 $query1 = "INSERT INTO blog_likes (post_id) VALUES ($post_id)";
@@ -37,7 +37,7 @@ if (!isset($_SESSION['acc_id']) && !isset($_SESSION['role'])) {
                         exit(0);
                     } else {
                         $_SESSION['positive'] = "Bolg successfully uploaded";
-                        header("Location: ../FrontEnd/loggedIn/userpage/home.php");
+                        header("Location: ../FrontEnd/loggedIn/organizationpage/home.php");
                         exit(0);
                     }
                 }

@@ -21,8 +21,8 @@ if ($unreadNotificationsResult) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
     <link rel="stylesheet" href="/FrontEnd/css/colors.css">
-    <link rel="stylesheet" href="/FrontEnd/css/organization.css">
     <link rel="stylesheet" href="/FrontEnd/css/navbar.css">
+    <link rel="stylesheet" href="/FrontEnd/css/organization.css">
     <link rel="stylesheet" href="/FrontEnd/css/footer.css">
     <link rel="stylesheet" href="/FrontEnd/css/notification.css">
     <link rel="stylesheet" href="/FrontEnd/css/feedback.css">
@@ -51,20 +51,23 @@ if ($unreadNotificationsResult) {
         ?>
     </div>
 
-    <div class="ctn">
-        <form action="#" method="GET">
-            <input type="text" name="query" placeholder="Search Organizations...">
-            <button type="submit" class="btn"><i class="ri-search-line"></i></button>
-        </form>
-    </div>
     <div class="container">
-        <?php
-        if (isset($_GET['query'])) {
-            include('../../../BackEnd/organization_search_BE.php');
-        } else {
-            include('../../../BackEnd/organization_fetch_BE.php');
-        }
-        ?>
+        <div class="options">
+                <a href="organization.php" class="btn">back</a>
+                <form action="#" method="GET">
+                    <input type="text" name="query" placeholder="Search Organizations...">
+                    <button type="submit"><i class="ri-search-line"></i></button>
+                </form>
+        </div>
+        <div class="organization-container">
+            <?php 
+                if (isset($_GET['query'])){
+                    include('../../../BackEnd/organization_search_BE.php');
+                } else {
+                    include('../../../BackEnd/organization_fetch_BE.php');
+                }
+            ?>
+        </div>
     </div>
 
     <?php include "../../components/footer.php" ?>
