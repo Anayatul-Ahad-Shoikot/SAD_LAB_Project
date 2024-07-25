@@ -141,6 +141,9 @@
     transform: scale(1.1) translateY(7px);
     transition: .6s;
 }
+.short-report li a{
+    text-decoration: none;
+}
 .short-report li i {
     display: flex;
     align-items: center;
@@ -152,7 +155,7 @@
 }
 .short-report li:nth-child(1) i {
     font-size: 4rem;
-    background: lightgreen;
+    background: rgb(218, 218, 218);
     color: black;
     transition: .8s;
 }
@@ -164,7 +167,7 @@
 }
 .short-report li:nth-child(2) i {
     font-size: 4rem;
-    background: lightpink;
+    background: rgb(218, 218, 218);
     color: black;
     transition: .8s;
 }
@@ -176,7 +179,7 @@
 }
 .short-report li:nth-child(3) i {
     font-size: 4rem;
-    background: lightblue;
+    background: rgb(218, 218, 218);
     color: black;
     transition: .8s;
 }
@@ -188,7 +191,7 @@
 }
 .short-report li:nth-child(4) i {
     font-size: 4rem;
-    background: rgb(255, 206, 116);
+    background: rgb(218, 218, 218);
     color: black;
     transition: .8s;
 }

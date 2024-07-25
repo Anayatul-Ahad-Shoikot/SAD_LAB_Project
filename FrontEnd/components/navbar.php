@@ -27,13 +27,15 @@
         <ul class="main-nav">
             <li><a href="/FrontEnd/loggedOut/index.php">Home</a></li>
             <span class="h-bar"></span>
-            <li><a href="#">Services</a></li>
+            <li><a href="#services">Services</a></li>
             <span class="h-bar"></span>
-            <li><a href="#">Donations</a></li>
+            <li><a href="#donations">Donations</a></li>
             <span class="h-bar"></span>
-            <li><a href="#">About Us</a></li>
+            <li><a href="#blogs">Blogs</a></li>
             <span class="h-bar"></span>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="#AboutUs">About Us</a></li>
+            <span class="h-bar"></span>
+            <li><a href="#contactUs">Contact Us</a></li>
         </ul>
     </div>
 </nav>

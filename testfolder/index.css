@@ -1,0 +1,38 @@
+
+.container {
+    display: flex;
+    height: 100vh; /* Adjust height as needed */
+}
+
+.sidebar {
+    flex: 1;
+    padding: 20px;
+    border-right: 1px solid #ccc;
+}
+
+.main {
+    flex: 3;
+    padding: 20px;
+}
+
+#userList {
+    margin-top: 10px;
+}
+
+#messageArea {
+    height: 70vh; /* Adjust height as needed */
+    overflow-y: scroll;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+input[type="text"], button {
+    margin-top: 10px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+button {
+    cursor: pointer;
+}

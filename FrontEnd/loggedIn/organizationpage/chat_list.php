@@ -33,7 +33,7 @@
 </head>
 <body>
 
-    <?php include "../../components/navbarU.php" ?>
+    <?php include "../../components/navbarO.php" ?>
 
     <div class="feedback">
         <?php

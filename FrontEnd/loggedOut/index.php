@@ -74,7 +74,7 @@
         </div>
     </div>
     <div id="line"></div>
-    <div class="services">
+    <div class="services" id="services">
         <div class="section-title">
             <p id="highlight">We provide</p>
             <p>A platform for Organizations. Stay connected with orphans and elderly to change lives with each click. Spread kindness to all.</p>
@@ -114,7 +114,7 @@
     </div>
     <div id="line"></div>
     
-    <div class="donations">
+    <div class="donations" id="donations">
         <div class="section-title">
             <p id="highlight">Recent raised funds</p>
         </div>
@@ -313,7 +313,7 @@
 
     <div id="line"></div>
 
-    <div class="AboutUs">
+    <div class="AboutUs" id="AboutUs">
         <div class="descriptionbox">
             <div class="session-title">
                 <p>Help us to Achieve our Goal</p>
@@ -333,7 +333,7 @@
         </div>
     </div>
     <div id="line"></div>
-    <div class="blog">
+    <div class="blog" id="blogs">
         <div class="section-title">
             <h2 id="highlight">Blog</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ipsum sit nibh amet egestas tellus.</p>
@@ -345,8 +345,8 @@
         </div>
     </div>
     <div id="line"></div>
-    <div style="margin-top:0px;" class="row no-margin">
-        <!-- <iframe style="width:100%" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d249759.19784092825!2d79.10145254589841!3d12.009924873581818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1448883859107"  height="450" frameborder="0" style="border:0" allowfullscreen></iframe> -->
+    <div style="margin-top:0px;" class="row no-margin" id="contactUs">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3650.582336034878!2d90.4471350761669!3d23.79788287863816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1721831420744!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     <div class="contactUs">
         <div class="contact_form">
@@ -391,7 +391,7 @@
 
     <button id="scrollTopBtn" title="Go to top">↑</button>
 
-
+    <script src="/FrontEnd/js/nav_scroll.js"></script>        
     <script src="/FrontEnd/js/scrollupBTN.js"></script>
 </body>
 

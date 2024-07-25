@@ -77,7 +77,7 @@ mysqli_close($con);
             <a href="orphan_add.php" class="btn">Add Child</a>
             <form action="#" method="GET">
                 <input type="text" name="query" placeholder="Search Child...">
-                <button type="submit"><i class="ri-search-line"></i></button>
+                <button type="submit"><i class='bx bx-search bx-rotate-90' ></i></button>
             </form>
         </div>
 

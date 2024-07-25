@@ -1,5 +1,6 @@
 let mybutton = document.getElementById("scrollTopBtn");
-window.onscroll = function () {
+
+window.onscroll = function() {
     scrollFunction();
 };
 
@@ -11,7 +12,10 @@ function scrollFunction() {
     }
 }
 
-mybutton.onclick = function () {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
+mybutton.onclick = function() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 };
+

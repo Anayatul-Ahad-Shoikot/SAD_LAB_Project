@@ -80,28 +80,28 @@ if ($unreadNotificationsResult) {
 
         <div class="short-report">
             <li>
-                <a href="#"><i class='bx bxs-dollar-circle bx-spin bx-rotate-180'></i></a>
+                <a href="#"><i class='bx bxs-dollar-circle'></i></a>
                 <span>
                     <p>Donation Received</p>
                     <h3>678</h3>
                 </span>
             </li>
             <li>
-                <a href="#"><i class='bx bxs-user-plus bx-tada'></i></a>
+                <a href="#"><i class='bx bxs-face' ></i></i></a>
                 <span>
                     <p>Adoption Requests</p>
                     <h3><?php echo $total_adoptions ?></h3>
                 </span>
             </li>
             <li>
-                <a href="/Root/D & A/Org_donation_adoption/ORPHAN_AMOUNT_DASH.php"><i class='bx bx-dollar bx-tada'></i></a>
+                <a href="#"><i class='bx bxs-user-plus' ></i></a>
                 <span>
                     <p>Volunteers</p>
                     <h3>9</h3>
                 </span>
             </li>
             <li>
-                <a href="#"><i class='bx bxs-coin-stack bx-tada'></i></a>
+                <a href="#"><i class='bx bxs-report'></i></i></a>
                 <span>
                     <p>Reports</p>
                     <h3>4</h3>
