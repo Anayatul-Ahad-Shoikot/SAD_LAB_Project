@@ -113,7 +113,7 @@ if ($unreadNotificationsResult) {
                 <input type="file" name="image" accept="image/*">
             </div>
             <div class="btn">
-                <button type="submit" name="update">Update</button>
+                <button type="submit" name="update" id="button-30">Update</button>
             </div>
         </form>
     </div>

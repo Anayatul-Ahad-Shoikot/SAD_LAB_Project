@@ -104,17 +104,8 @@
 }
 
 #write-comment input {
-    width: 89.5%;
+    width: 60%;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
-}
-
-#write-comment button {
-    background-color: var(--primary-color-light);
-    color: var(--f2-color);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
 }

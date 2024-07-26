@@ -6,30 +6,6 @@
 }
 
 
-
-.btn {
-    padding: 12px 15px;
-    font-size: 15px;
-    font-weight: bold;
-    text-decoration: none;
-    background-color: var(--primary-color-light);
-    cursor: pointer;
-    text-align: center;
-    color: #fff;
-    margin: 0px 10px;
-    border-radius: 8px;
-    transition: .5s;
-}
-.btn:hover {
-  background-color: var(--primary-color-dark);
-  transition: .5s;
-}
-
-
-
-
-
-
 .users{
   width: 25%;
   background-color: lightblue;

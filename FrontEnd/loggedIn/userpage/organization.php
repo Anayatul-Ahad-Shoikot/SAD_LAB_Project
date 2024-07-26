@@ -53,10 +53,10 @@ if ($unreadNotificationsResult) {
 
     <div class="container">
         <div class="options">
-                <a href="organization.php" class="btn">back</a>
+                <a href="organization.php" id="button-30">back</a>
                 <form action="#" method="GET">
                     <input type="text" name="query" placeholder="Search Organizations...">
-                    <button type="submit"><i class="ri-search-line"></i></button>
+                    <button type="submit"><i class='bx bx-search-alt'></i></button>
                 </form>
         </div>
         <div class="organization-container">

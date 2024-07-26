@@ -73,9 +73,9 @@ if ($unreadNotificationsResult) {
         </div>
 
         <div class="options">
-            <a href="chat.php?out_id=<?php echo $user_id ?>&in_id=<?php echo $org_id ?>" class="btn">Inbox</a>
-            <a href="see_organization_orphanage.php?org_id=<?php echo $org_id ?>" class="btn">Orphanage</a>
-            <a href="#" class="btn">Become volunteer</a>
+            <a href="chat.php?out_id=<?php echo $user_id ?>&in_id=<?php echo $org_id ?>" id="button-30">Inbox</a>
+            <a href="see_organization_orphanage.php?org_id=<?php echo $org_id ?>" id="button-30">Orphanage</a>
+            <a href="#" id="button-30" >Become volunteer</a>
         </div>
 
         <div class="short-report">

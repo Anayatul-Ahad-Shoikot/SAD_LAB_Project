@@ -42,7 +42,7 @@ if (isset($_POST['signup_btn'])) {
     $acc_id = mysqli_insert_id($con);
 
     if ($role == "user") {
-        $SignUp_Query_1 = "INSERT INTO user_list (acc_id, user_image) VALUES ($acc_id , '/UserImage/accountPic/avatar1.png')";
+        $SignUp_Query_1 = "INSERT INTO user_list (acc_id) VALUE ('$acc_id')";
         if (mysqli_query($con, $SignUp_Query_1)) {
             $_SESSION['positive'] = "SignUp Successfull! Login to continue.";
             header("Location: /FrontEnd/loggedOut/login.php");
@@ -53,7 +53,7 @@ if (isset($_POST['signup_btn'])) {
             exit(0);
         }
     } else {
-        $SignUp_Query_2 = "INSERT INTO org_list (acc_id, org_logo) VALUES ($acc_id, '/UserImage/accountPic/avatar1.png')";
+        $SignUp_Query_2 = "INSERT INTO org_list (acc_id) VALUE ('$acc_id')";
         if (mysqli_query($con, $SignUp_Query_2)) {
             $_SESSION['positive'] = "SignUp Successfull! Login to continue.";
             header("Location: /FrontEnd/loggedOut/login.php");

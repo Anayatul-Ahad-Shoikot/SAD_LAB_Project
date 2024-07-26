@@ -350,7 +350,7 @@
     </div>
     <div class="contactUs">
         <div class="contact_form">
-            <h2 class="heading">Contact Form</h2>
+            <h2 id="highlight">Contact Form</h2>
             <br>
             <div class="form_row">
                 <div class="label"><label>Enter Name </label><span>:</span></div>
@@ -371,12 +371,12 @@
                 </div>
             </div>
             <div class="form_row">
-                <button class="btn btn-primary">Send Message</button>
+                <button id="button-30">Send Message</button>
             </div>
         </div>
         <div class="contact_address">
             <div class="address">
-                <h2 class="heading">Address</h2>
+                <h2 id="highlight">Address</h2>
                 Ritz Mozaffor BA<br>
                 1/1, B #F, R #1, S #2<br>
                 Mirpur 02, Dhaka - 1216<br>

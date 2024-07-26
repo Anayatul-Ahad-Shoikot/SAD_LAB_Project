@@ -113,11 +113,10 @@ if ($unreadNotificationsResult) {
     </div>
     <div id="line"></div>
     <div style="margin-top:0px;" class="row no-margin">
-        <iframe style="width:100%" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d249759.19784092825!2d79.10145254589841!3d12.009924873581818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1448883859107" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-    </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3650.582336034878!2d90.4471350761669!3d23.79788287863816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1721831420744!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>    </div>
     <div class="contactUs">
         <div class="contact_form">
-            <h2 class="heading">Contact Form</h2>
+            <h2 id="highlight">Contact Form</h2>
             <br>
             <div class="form_row">
                 <div class="label"><label>Enter Name </label><span>:</span></div>
@@ -138,12 +137,12 @@ if ($unreadNotificationsResult) {
                 </div>
             </div>
             <div class="form_row">
-                <button class="btn btn-primary">Send Message</button>
+                <button id="button-30">Send Message</button>
             </div>
         </div>
         <div class="contact_address">
             <div class="address">
-                <h2 class="heading">Address</h2>
+                <h2 id="highlight">Address</h2>
                 Ritz Mozaffor BA<br>
                 1/1, B #F, R #1, S #2<br>
                 Mirpur 02, Dhaka - 1216<br>

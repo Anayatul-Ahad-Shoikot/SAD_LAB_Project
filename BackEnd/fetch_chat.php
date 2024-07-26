@@ -24,7 +24,7 @@
                     <input type="text" class="incoming_id" name="incoming_id" value="'. $in_id .'" hidden>
                     <input type="text" name="message" class="input-field" placeholder="Type a message here..." autocomplete="off">
                     <input type="text" name="outgoing_id" value="'. $out_id .'" hidden>
-                    <button><i class="fab fa-telegram-plane"></i></button>
+                    <button id="button-30">Send</button>
                 </form>';
             echo $output;
 
@@ -47,7 +47,7 @@
                     <input type="text" class="incoming_id" name="incoming_id" value="'. $in_id .'" hidden>
                     <input type="text" name="message" class="input-field" placeholder="Type a message here..." autocomplete="off">
                     <input type="text" name="outgoing_id" value="'. $out_id .'" hidden>
-                    <button><i class="fab fa-telegram-plane"></i></button>
+                    <button id="button-30">Send</button>
                 </form>';
             echo $output;
     } else {

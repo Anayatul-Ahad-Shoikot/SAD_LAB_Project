@@ -32,8 +32,8 @@
                         } else if ($role == 'admin') {
                             echo '<a href="/Root/Org_Page/O_VIEW_ORG.php?org_id=' . $row['org_id'] . '"> Visit </a>';
                         } else {
-                            echo '<a href="/FrontEnd/loggedIn/userpage/see_organization_profile.php?org_id=' . $row['org_id'] . '"> Visit </a>';
-                            echo '<a href="/Root/D & A/Donations/U_DONATION_DASH.php?org_id=' . $row['org_id'] . '"> Donate </a>';
+                            echo '<a href="/FrontEnd/loggedIn/userpage/see_organization_profile.php?org_id=' . $row['org_id'] . '" id="button-30"> View </a>';
+                            echo '<a href="/Root/D & A/Donations/U_DONATION_DASH.php?org_id=' . $row['org_id'] . '" id="button-30"> Donate </a>';
                         }
                     echo '</div>';
                 echo '</div>';

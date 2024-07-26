@@ -119,7 +119,7 @@
 
 #highlight {
     font-family: var(--secondary-font);
-    color: var(--secondary-color-dark);
+    color: var(--primary-title-color);
     margin-bottom: 8px;
     font-size: 5rem;
     font-weight: 500;
@@ -135,17 +135,27 @@
 .service-table .part {
     text-align: center;
     padding: 45px 60px;
-    transition: 1s;
+    transition: .8s ease-out;
 }
 
-.part:hover {
+.part:hover{
+    background-color: rgba(255, 89, 122, 0.7);
     transform: scale(1.1) translateY(-5px);
-    transition: .3s;
+    transition: .3s ease-in;
+}
+.part:hover #icon_i{
+    color: var(--text-color-dark);
+    transition: .8s ease-out;
+}
+.part:hover p{
+    color: var(--text-color-dark);
+    transition: .8s ease-out;
 }
 
 #icon_i {
-    color: var(--primary-color-dark);
+    color: var(--primary-color-light);
     font-size: 4rem;
+    transition: .3s ease-in;
 }
 
 .part .title {
@@ -158,6 +168,7 @@
 .part p {
     font-family: var(--primary-font);
     color: gray;
+    transition: .3s ease-in;
 }
 
 

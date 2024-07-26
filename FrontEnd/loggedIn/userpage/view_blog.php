@@ -49,7 +49,7 @@ if ($unreadNotificationsResult) {
     <div class="blog-actions">
       <form action="../../../BackEnd/react_handler_BE.php" method="post">
         <input type="hidden" name="post_id" value="<?php echo $post_id ?>">
-        <button type="submit" name="like" onclick="storeScrollPosition('LIKE')"><i class='bx bxs-like'></i></button>
+        <button type="submit" name="like" onclick="storeScrollPosition('LIKE')" id="button-30"><i class='bx bxs-like'></i></button>
       </form>
       <p class="likes-count"><?php echo $likes ?></p>
     </div>
@@ -63,7 +63,7 @@ if ($unreadNotificationsResult) {
     <form id="write-comment" action="../../../BackEnd/comment_handler_BE.php" method="post">
       <input type="hidden" name="post_id" value="<?php echo $post_id ?>">
       <input type="text" name="comment" placeholder="Add a comment" required>
-      <button type="submit" name="submit" onclick="storeScrollPosition('COMMENT')">Comment</button>
+      <button type="submit" name="submit" onclick="storeScrollPosition('COMMENT')" id="button-30">Comment</button>
     </form>
   </div>
 

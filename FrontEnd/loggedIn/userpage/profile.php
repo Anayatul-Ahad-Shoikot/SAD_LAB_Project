@@ -70,9 +70,9 @@ if ($unreadNotificationsResult) {
         </div>
 
         <div class="options">
-            <a href="chat_list.php" class="btn">Chats</a>
-            <a href="volunteer.php" class="btn">Volunteers</a>
-            <a href="profile_edit.php" class="btn">Profile Info</a>
+            <a href="chat_list.php" id="button-30">Chats</a>
+            <a href="volunteer.php" id="button-30">Volunteers</a>
+            <a href="profile_edit.php" id="button-30">Profile Info</a>
         </div>
 
         <div class="short-report">

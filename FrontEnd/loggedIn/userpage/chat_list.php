@@ -39,7 +39,7 @@ if (mysqli_num_rows($sql) > 0) {
     <div class="container">
         <div class="users">
             <div class="search">
-                <a href="profile.php" class="btn">back</a>
+                <a href="profile.php" id="button-30">back</a>
                 <input type="text" placeholder="Search organizations by name...">
             </div>
             <div class="search-list">
