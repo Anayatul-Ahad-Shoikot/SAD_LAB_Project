@@ -66,6 +66,7 @@
   align-items: center;
   border-bottom: 1px solid rgba(128, 128, 128, 0.3);
   justify-content: space-between;
+  text-decoration: none;
 }
 .users .search-list a:hover, .users .inbox-list a:hover{
   cursor: pointer;

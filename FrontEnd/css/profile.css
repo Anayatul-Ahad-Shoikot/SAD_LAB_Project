@@ -19,9 +19,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: rgba(255, 255, 255, 0.8);
+    background: var(--background-color);
     backdrop-filter: blur(10px);
-    border-radius: 15px;
+    border-radius: 120px 15px 15px 120px;
     box-shadow: 1rem 1rem 5rem rgba(0, 0, 0, 0.2);
     
 }

@@ -13,21 +13,24 @@
     --text-color-light: #2f2f2f;
     --text-color-lighter: #71717a;
     --background-color: #ffffff;
+
+    --primary-title-color: #2e91b2;
+    --secondary-title-color: #f3254e;
+    --primary-text-color: #71717a;
+    --button-color: #ff597b;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Ubuntu';
-    font-size: 13px;
+    font-family: 'Poppins';
+    font-size: 12px;
 }
-
 body {
     scroll-behavior: smooth;
-    background-color: #ffffffff;
+    background-color: #fff;
 }
-
 body::-webkit-scrollbar {
     display: none;
 }

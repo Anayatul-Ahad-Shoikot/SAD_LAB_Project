@@ -3,7 +3,7 @@
         <ul class="contact-info">
             <li class="top-nav-item">
                 <i class='bx bxs-phone'></i>
-                <a href="tel:+8801973336001">+8801973336001</a>
+                <a href="tel:+8801973336001">+880 1973336001</a>
             </li>
             <li class="top-nav-item">
                 <i class='bx bxl-gmail'></i>

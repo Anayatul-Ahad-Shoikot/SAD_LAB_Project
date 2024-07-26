@@ -26,7 +26,7 @@
                         </a>';
         }
     }else{
-        $output .= 'No organization found !';
+        $output .= 'No organizations found !';
     }
     echo $output;
 ?>

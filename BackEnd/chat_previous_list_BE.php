@@ -49,14 +49,14 @@ if (!empty($interacted_ids)) {
     $orgs_query = mysqli_query($con, $sql_orgs);
     
     while ($user = mysqli_fetch_assoc($users_query)) {
-        echo '<a href="#" data-out_id="'. $outgoing_id .'" data-in_id="' . $user['id'] . '">
+        echo '<a onclick="addClickListenersToInboxList();" data-out_id="'. $outgoing_id .'" data-in_id="' . $user['id'] . '">
                 <div class="content">
                     <img src="/UserImage/accountPic/'. $user['image'] .'" alt="">
                     <div class="details">
                         <span>'. $user['name'] .'</span>
                     </div>
                 </div>
-              </a>';
+            </a>';
     }
     
 
@@ -68,7 +68,7 @@ if (!empty($interacted_ids)) {
                         <span>'. $org['name'] .'</span>
                     </div>
                 </div>
-              </a>';
+            </a>';
     }
 } else {
     echo 'No interactions found!';

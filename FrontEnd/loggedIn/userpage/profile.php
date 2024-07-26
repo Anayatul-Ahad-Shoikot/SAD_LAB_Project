@@ -60,12 +60,12 @@ if ($unreadNotificationsResult) {
                     <p>Location : <?php echo $user_address, ", ", $user_location ?></p>
                     <p>Email : <?php echo $acc_email ?></p>
                     <p>Contact : <?php echo $user_contact ?></p>
-                    <p>Occupation : <?php echo $user_job ?></p>
+                    
                     <p>Account Type : <?php echo $role ?></p>
                 </div>
-                <div class="biography" style="visibility: hidden;">
-                    <h1><?php echo $org_vision ?></h1>
-                    <p><?php echo $org_description ?></p>
+                <div class="biography">
+                    <h1>Occupation</h1>
+                    <p><?php echo $user_job ?></p></p>
                 </div>
         </div>
 

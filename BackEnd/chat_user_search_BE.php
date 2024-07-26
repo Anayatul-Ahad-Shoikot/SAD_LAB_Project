@@ -1,6 +1,7 @@
 <?php
-    session_start();
+    
     include_once "db_con.php";
+    session_start();
     $offline = "";
     $searchTerm = mysqli_real_escape_string($con, $_POST['searchTerm']);
 
@@ -15,7 +16,7 @@
     $query2 = mysqli_query($con, $sql2);
     if(mysqli_num_rows($query2) > 0){
         while($row2 = mysqli_fetch_assoc($query2)){
-            $output .= '<a href="chat.php?out_id='. $outgoing_id .'&in_id=' . $row2['user_id'] . '">
+            $output .= '<a href="#" data-out_id="'. $outgoing_id .'" data-in_id="' . $row2['user_id'] . '">
                             <div class="content">
                                 <img src="/UserImage/accountPic/'. $row2['user_image'] .'" alt="">
                                 <div class="details">
@@ -25,7 +26,7 @@
                         </a>';
         }
     }else{
-        $output .= 'No organization found !';
+        $output .= 'No users found !';
     }
     echo $output;
 ?>
