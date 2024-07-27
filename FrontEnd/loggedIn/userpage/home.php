@@ -101,8 +101,8 @@ if ($unreadNotificationsResult) {
 
 
     <div class="container">
-        <div class="option">
-            <h2><a href="create_blog.php">CreatePost</a></h2>
+        <div class="options">
+            <a href="create_blog.php" id="button-30">CreatePost</a>
         </div>
         <?php
         include('../../../BackEnd/blog_show_BE.php');
@@ -111,7 +111,7 @@ if ($unreadNotificationsResult) {
 
     <?php include "../../components/footer.php" ?>
 
-    <button id="scrollTopBtn" title="Go to top">↑</button>
+    <button id="scrollTopBtn" title="Go to top"><i class='bx bx-chevrons-up bx-burst' ></i></button>
 
     <script src="/FrontEnd/js/scrollupBTN.js"></script>
     <script src="/FrontEnd/js/notification_hovertime.js"></script>

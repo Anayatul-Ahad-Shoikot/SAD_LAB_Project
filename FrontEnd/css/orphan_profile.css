@@ -90,6 +90,8 @@
     align-items: center;
     justify-content: right;
     border-bottom: 2px solid var(--text-color-dark);
+    gap: 10px;
+    padding: 10px;
 }
 .options .btn {
     padding: 10px 15px;

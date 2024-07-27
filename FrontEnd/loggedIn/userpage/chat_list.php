@@ -42,15 +42,17 @@ if (mysqli_num_rows($sql) > 0) {
                 <a href="profile.php" id="button-30">back</a>
                 <input type="text" placeholder="Search organizations by name...">
             </div>
-            <div class="search-list">
-                
-            </div>
-            <div class="inbox-list">
-                <p>Previous chats</p>
-                <?php
-                include '../../../BackEnd/chat_previous_list_BE.php';
-                ?>
-            </div>
+            <section>
+                <div class="search-list">
+                    
+                </div>
+                <div class="inbox-list">
+                    <p>Previous chats</p>
+                    <?php
+                    include '../../../BackEnd/chat_previous_list_BE.php';
+                    ?>
+                </div>
+            </section>
         </div>
         <div class="chat-area">
 

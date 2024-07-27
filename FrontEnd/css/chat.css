@@ -2,39 +2,46 @@
   display: flex;
   width: 100%;
   height: 100%;
-  height: calc(100vh - 72px);
+  height: calc(100vh - 85px);
 }
 
 
 .users{
-  width: 25%;
-  background-color: lightblue;
-  padding-left: 15px;
+    height: 100%;
+    width: 25%;
+    background: rgb(255, 89, 123, .1);
 }
 
 .users .search{
-  padding: 9px 0;
+    padding: 9px 10px;
     display: flex;
     position: relative;
     align-items: center;
     justify-content: space-between;
+    gap: 15px;
     border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+}
 
+.users section{
+  height: calc(100% - 61px);
+  overflow-y: auto;
 }
 
 .users .search .text{
   font-size: 18px;
 }
 .users .search input{
-  height: 42px;
+    height: 42px;
     width: 100%;
-    font-size: 16px;
-    padding: 0 13px;
-    border: 1px solid grey;
+    font-size: 14px;
+    padding: 0 5px;
     outline: none;
-    border-radius: 5px;
+    border-radius: 8px;
     transition: all 0.2s ease;
     margin-right: 10px;
+    background-color: rgb(243, 37, 78, .35);
+    border: none;
+    color: white;
 }
 
 .users .search-list a, .users .inbox-list a {
@@ -43,10 +50,11 @@
   border-bottom: 1px solid rgba(128, 128, 128, 0.3);
   justify-content: space-between;
   text-decoration: none;
+  padding-left: 10px;
 }
 .users .search-list a:hover, .users .inbox-list a:hover{
   cursor: pointer;
-  background-color: rgb(156, 192, 204);
+  background-color: rgb(243, 37, 78, .35);
 }
 
 :is(.users, .search-list, .inbox-list) .content {
@@ -96,6 +104,7 @@
 
 /* Chat Area CSS Start */
 .chat-area{
+  height: 100%;
   width: 75%;
   display: flex;
   flex-direction: column;
@@ -106,19 +115,20 @@
   align-items: center;
   padding: 5px 30px;
   border-bottom: 1px solid rgb(128, 128, 128, .3);
-  background-color: lightblue;
+  background: rgb(255, 89, 123, .1);
 }
 .chat-area header img{
-  height: 55px;
+    height: 55px;
     width: 55px;
-    border-radius: 50%;
+    border-radius: 25%;
     margin: 0 15px;
-    border: 2px solid black;
+    border: 1px solid black;
 }
-.chat-area header .details span{
-  font-size: 25px;
-    font-weight: 300;
-    font-family: var(--primary-font);
+.chat-area header .details a{
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 500;
+    color: var(--text-color-medium);
 }
 .chat-box{
   position: relative;
@@ -128,6 +138,7 @@
   background: white;
   box-shadow: inset 0 32px 32px -32px rgb(0 0 0 / 5%),
               inset 0 -32px 32px -32px rgb(0 0 0 / 5%);
+  border-left: 1px solid rgba(128, 128, 128, 0.3);
 }
 .chat-box .text{
   position: absolute;
@@ -183,7 +194,7 @@
   padding: 15px;
   display: flex;
   justify-content: space-between;
-  background-color: lightblue;
+  background: rgb(255, 89, 123, .1);
   border-left: 1px solid rgba(128, 128, 128, 0.3);
 }
 .typing-area input{

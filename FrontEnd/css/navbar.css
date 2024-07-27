@@ -11,6 +11,7 @@ nav a {
 }
 
 .top-nav {
+    height: 24px;
     display: flex;
     justify-content: space-between;
     padding: 3px 15%;
@@ -30,6 +31,7 @@ nav a {
 }
 
 .bottom-nav {
+    height: 61px;
     position: sticky;
     top: 0;
     z-index: 100000000000;
@@ -98,15 +100,32 @@ nav a {
     right: 20px;
     z-index: 9999;
     border: none;
-    outline: none;
     background-color: var(--secondary-color-dark);
     color: white;
     cursor: pointer;
-    padding: 15px;
-    border-radius: 50px;
-    font-size: 18px;
+    padding: 10px 7px;
+    border-radius: 36px;
+}
+#scrollTopBtn i {
+    font-size: 35px;
 }
 
 #scrollTopBtn:hover {
     background-color: var(--secondary-color-light);
+    transition: .4s;
+}
+#scrollTopBtn:hover i{
+    color: black;
+}
+
+.active {
+    font-size: 18px;
+    color: var(--primary-color-dark);
+    font-weight: 700;
+}
+
+a:hover {
+    color: #f3254e;
+    transition: .6s;
+    font-weight: 500;
 }

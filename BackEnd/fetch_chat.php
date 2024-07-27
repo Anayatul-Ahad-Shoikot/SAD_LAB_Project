@@ -6,14 +6,14 @@
     $in_id = mysqli_real_escape_string($con, $_POST['in_id']);
 
     if ($acc_role == 'user'){
-            $sql1 = "SELECT org_name, org_logo FROM org_list WHERE org_id = $in_id";
+            $sql1 = "SELECT org_name, org_logo, org_id FROM org_list WHERE org_id = $in_id";
             $query1 = mysqli_query($con, $sql1);
             $row1 = mysqli_fetch_assoc($query1);
 
             $output = '<header>
                     <img src="/UserImage/accountPic/' . $row1['org_logo'] . '" alt="">
                     <div class="details">
-                        <span>' . $row1['org_name'] . '</span>
+                        <a href="/FrontEnd/loggedIn/userpage/see_organization_profile.php?org_id=' . $row1['org_id'] . '">' . $row1['org_name'] . '</a>
                     </div>
                 </header>
                 <div class="chat-box">';

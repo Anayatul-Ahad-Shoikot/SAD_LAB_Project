@@ -56,7 +56,7 @@ if ($unreadNotificationsResult) {
                 <a href="organization.php" id="button-30">back</a>
                 <form action="#" method="GET">
                     <input type="text" name="query" placeholder="Search Organizations...">
-                    <button type="submit"><i class='bx bx-search-alt'></i></button>
+                    <button type="submit"><i class='bx bx-search-alt bx-spin bx-rotate-270' ></i></button>
                 </form>
         </div>
         <div class="organization-container">
@@ -72,7 +72,7 @@ if ($unreadNotificationsResult) {
 
     <?php include "../../components/footer.php" ?>
 
-    <button id="scrollTopBtn" title="Go to top">↑</button>
+    <button id="scrollTopBtn" title="Go to top"><i class='bx bx-chevrons-up bx-burst' ></i></button>
 
     <script src="/FrontEnd/js/scrollupBTN.js"></script>
     <script src="/FrontEnd/js/notification_hovertime.js"></script>

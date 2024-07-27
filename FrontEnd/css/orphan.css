@@ -90,46 +90,8 @@
   align-items: center;
   justify-content: right;
   border-bottom: 2px solid var(--text-color-dark);
-}
-.options .btn {
-  padding: 10px 15px;
-  font-size: 1rem;
-  font-family: 'Segoe UI';
-  text-decoration: none;
-  background-color: var(--primary-color-light);
-  cursor: pointer;
-  font-weight: 500;
-  text-align: center;
-  color: #fff;
-  margin: 1.5rem .5rem;
-  border-radius: 8px;
-  transition: .7s;
-}
-.options .btn:hover {
-  background-color: var(--secondary-color-light);
-  color: var(--text-color-dark);
-  transform: scale(1.1);
-  transition: .7s;
-}
-.options form {
-  width: 300px;
-  padding: 9px 10px 9px 25px;
-  display: flex;
-  align-items: center;
-  border: 1px solid var(--secondary-color-light);
-  border-radius: 4rem;
-}
-.options input {
-  outline: none;
-  color: var(--text-color-dark);
-  border: none;
-  font-size: 1rem;
-}
-.options input::placeholder {
-  color: var(--text-color-light);
-}
-.options form button{
-  margin: 5px;
+  gap: 10px;
+  padding: 10px;
 }
 
 

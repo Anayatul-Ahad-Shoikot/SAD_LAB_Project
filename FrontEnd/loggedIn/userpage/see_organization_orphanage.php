@@ -73,11 +73,12 @@ if ($unreadNotificationsResult) {
         </div>
 
         <div class="options">
-            <a href="see_organization_profile.php?org_id=<?php echo $org_id ?>" class="btn">back</a>
-            <a href="#" class="btn">Inbox</a>
+            <a href="see_organization_profile.php?org_id=<?php echo $org_id ?>" id="button-30">back</a>
+            <a href="#" id="button-30">Inbox</a>
             <form action="#" method="GET">
                 <input type="text" name="query" placeholder="Search Child...">
-                <button type="submit"><i class="ri-search-line"></i></button>
+                <input type="hidden" name="org_id" value="<?php  echo $org_id ?>">
+                <button type="submit"><i class='bx bx-search-alt bx-spin bx-rotate-270' ></i></button>
             </form>
         </div>
 
@@ -85,7 +86,7 @@ if ($unreadNotificationsResult) {
             <div class="plate">
                 <?php
                     if(isset($_GET['query'])){
-                        include('/xampp/htdocs/DBMS_Project_Organized_One/Root/Orphanage/USER-PERSPECTIVE/UP_SEARCH_ORPHAN_BE.php');
+                        include('../../../BackEnd/see_searched_organization_orphanage_BE.php');
                     } else {
                         include ('../../../BackEnd/see_organization_orphanage_BE.php');
                     }
@@ -95,7 +96,7 @@ if ($unreadNotificationsResult) {
 
     <?php include "../../components/footer.php" ?>
 
-    <button id="scrollTopBtn" title="Go to top">↑</button>
+    <button id="scrollTopBtn" title="Go to top"><i class='bx bx-chevrons-up bx-burst' ></i></button>
 
     <script src="/FrontEnd/js/scrollupBTN.js"></script>
     <script src="/FrontEnd/js/notification_hovertime.js"></script>

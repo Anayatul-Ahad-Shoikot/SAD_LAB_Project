@@ -201,7 +201,7 @@ if ($unreadNotificationsResult) {
 
     <?php include "../../components/footer.php" ?>
 
-    <button id="scrollTopBtn" title="Go to top">↑</button>
+    <button id="scrollTopBtn" title="Go to top"><i class='bx bx-chevrons-up bx-burst' ></i></button>
 
     <script src="/FrontEnd/js/scrollupBTN.js"></script>
     <script src="/FrontEnd/js/notification_hovertime.js"></script>
