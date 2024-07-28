@@ -9,7 +9,7 @@
     <link rel="icon" href="/Icons&logos/LOGO.png" type="image/x-icon">
     <title>CareSenerity | Signup</title>
     <link rel="stylesheet" href="/FrontEnd/css/colors.css">
-    <link rel="stylesheet" href="/FrontEnd/css/signup.css">
+    <link rel="stylesheet" href="/FrontEnd/css/login.css">
 </head>
 
 <body>
@@ -38,7 +38,22 @@
                     <option value="org">Organization</option>
                 </select>
             </div>
-            <button type="submit" name="signup_btn">SignUp</button>
+            <div class="user-type">
+                <label>Security question:</label>
+                <select name="question">
+                    <option value="" selected disabled>Select a question</option>
+                    <option value="What was your childhood nickname?">What was your childhood nickname?</option>
+                    <option value="What is your favorite book?">What is your favorite book?</option>
+                    <option value="What was the name of your first pet?">What was the name of your first pet?</option>
+                    <option value="What is your favorite movie?">What is your favorite movie?</option>
+                    <option value="What was your first job?">What was your first job?</option>
+                    <option value="What was your biggest lost?">What was your biggest lost?</option>
+                    <option value="What is the last name of your best childhood friend?">What is the last name of your best childhood friend?</option>
+                    <option value="What is your favourite faculty name?">What is your favourite faculty name?</option>
+                </select>
+            </div>
+            <input type="text" name="answer" required placeholder="Your answer">
+            <button type="submit" name="signup_btn" id="button-30">SignUp</button>
         </form>
         <p class="signup">Already have an account?<a id="signup" href="/FrontEnd/loggedOut/login.php">Login</a></p>
         <span><a href="/FrontEnd/loggedOut/index.php" class="goback">Go Back</a></span>

@@ -49,7 +49,7 @@ if (mysqli_num_rows($sql) > 0) {
                 <div class="inbox-list">
                     <p>Previous chats</p>
                     <?php
-                    include '../../../BackEnd/chat_previous_list_BE.php';
+                        include '../../../BackEnd/chat_previous_list_BE.php';
                     ?>
                 </div>
             </section>

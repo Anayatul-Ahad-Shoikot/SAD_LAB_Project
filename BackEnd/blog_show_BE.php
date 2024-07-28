@@ -20,9 +20,9 @@ if (mysqli_num_rows($result) > 0) {
         echo '<p class="blog-post_content">' . $row['post_content'] . '</p>';
         echo '<div class="info">';
         if ($_SESSION['role'] == 'user') {
-            echo '<a href="/FrontEnd/loggedIn/userpage/view_blog.php?post_id=' . $row['post_id'] . '" class="blog-post_cta">Read More</a>';
+            echo '<a href="/FrontEnd/loggedIn/userpage/view_blog.php?post_id=' . $row['post_id'] . '" id="button-30">Read More</a>';
         } else {
-            echo '<a href="/FrontEnd/loggedIn/organizationpage/view_blog.php?post_id=' . $row['post_id'] . '" class="blog-post_cta">Read More</a>';
+            echo '<a href="/FrontEnd/loggedIn/organizationpage/view_blog.php?post_id=' . $row['post_id'] . '" id="button-30">Read More</a>';
         }
         echo '<div class="likes">';
         echo '<i class="bx bxs-like"></i>';

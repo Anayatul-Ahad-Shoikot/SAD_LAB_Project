@@ -36,9 +36,9 @@
             <h1>LogIn</h1>
             <input type="text" name="acc_name" placeholder="Account Name" required>
             <input type="password" name="acc_pass" placeholder="Password" required>
-            <button type="submit" name="login_btn">LogIn</button>
+            <button type="submit" name="login_btn" id="button-30">LogIn</button>
         </form>
-        <p class="forgetPass"><a href="#">Forget password?</a></p>
+        <p class="forgetPass"><a href="/FrontEnd/loggedOut/forgetpassword.php">Forget password?</a></p>
         <p class="signup">Don't have an account?<a id="signup" href="/FrontEnd/loggedOut/signup.php">Create new</a></p>
         <span><a href="/FrontEnd/loggedOut/index.php" class="goback">Go Back</a></span>
     </div>

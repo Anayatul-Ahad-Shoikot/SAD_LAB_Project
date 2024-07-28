@@ -56,7 +56,7 @@ if ($unreadNotificationsResult) {
         
         <div class="accounnt-information-container">
             <div class="account-picture">
-                <img src="../../../UserImage/accountPic/<?php echo $org_logo ?>" alt="profile" width="250px" height="250px">
+                <img src="../../../UserImage/accountPic/<?php echo $org_logo ?>" alt="profile">
             </div>
             <div class="account-data">
                     <h1><?php echo $org_name ?></h1>
@@ -73,7 +73,7 @@ if ($unreadNotificationsResult) {
         </div>
 
         <div class="options">
-            <a href="chat.php?out_id=<?php echo $user_id ?>&in_id=<?php echo $org_id ?>" id="button-30">Inbox</a>
+            <a href="chat_direct.php?out_id=<?php echo $user_id ?>&in_id=<?php echo $org_id ?>" id="button-30">Inbox</a>
             <a href="see_organization_orphanage.php?org_id=<?php echo $org_id ?>" id="button-30">Orphanage</a>
             <a href="#" id="button-30" >Become volunteer</a>
         </div>

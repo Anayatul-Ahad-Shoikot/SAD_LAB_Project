@@ -9,6 +9,8 @@ if (isset($_POST['signup_btn'])) {
     $acc_pass = $_POST['acc_pass'];
     $confirm_pass = $_POST['confirm_pass'];
     $role = $_POST['role'];
+    $question = $_POST['question'];
+    $answer = $_POST['answer'];
     $date = date("Y-m-d");
 
     $Name_Check_Query = "SELECT acc_name FROM accounts WHERE acc_name = '$acc_name' LIMIT 1";
@@ -34,10 +36,8 @@ if (isset($_POST['signup_btn'])) {
         exit(0);
     }
 
-    // $hashed_password = password_hash($acc_pass, PASSWORD_DEFAULT);
-    $hashed_password = $acc_pass;
-
-    $SignUp_Query = "INSERT INTO accounts (acc_name, acc_pass, acc_email, role, acc_join_date) VALUES ('$acc_name', '$hashed_password', '$acc_email', '$role', '$date')";
+    $hashed_password = password_hash($acc_pass, PASSWORD_DEFAULT);
+    $SignUp_Query = "INSERT INTO accounts (acc_name, acc_pass, acc_email, role, acc_join_date, question, answer) VALUES ('$acc_name', '$hashed_password', '$acc_email', '$role', '$date', '$question', '$answer')";
     mysqli_query($con, $SignUp_Query);
     $acc_id = mysqli_insert_id($con);
 

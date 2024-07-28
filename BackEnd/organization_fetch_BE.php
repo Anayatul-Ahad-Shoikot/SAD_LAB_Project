@@ -39,7 +39,7 @@
                 echo '</div>';
             }
         } else {
-            echo 'No blog posts found.';
+            echo 'No organization found.';
         }
     }
 

@@ -13,8 +13,8 @@ if (isset($_POST['login_btn'])) {
         $row = mysqli_fetch_array($Name_Check_Query_Result);
         $stored_hashed_acc_pass = $row['acc_pass'];
 
-        // if (password_verify($entered_acc_pass, $stored_hashed_acc_pass)) {
-        if ($entered_acc_pass == $stored_hashed_acc_pass) {
+        if (password_verify($entered_acc_pass, $stored_hashed_acc_pass)) {
+        // if ($entered_acc_pass == $stored_hashed_acc_pass) {
             $_SESSION['acc_id'] = $row['acc_id'];
             $_SESSION['role'] = $row['role'];
             switch ($_SESSION['role']) {

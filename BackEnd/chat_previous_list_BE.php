@@ -14,40 +14,45 @@ $query3 = mysqli_query($con, $sql3);
 $row3 = mysqli_fetch_assoc($query3);
 $outgoing_id = ($acc_role == 'user') ? $row3['user_id'] : $row3['org_id'];
 
+// Fetch the latest interaction for each user/org
 $sql = "
-    SELECT DISTINCT 
-        CASE 
-            WHEN outgoing_msg_id = $outgoing_id THEN incoming_msg_id 
-            ELSE outgoing_msg_id 
-        END AS interacted_id
+    SELECT
+        CASE
+            WHEN outgoing_msg_id = $outgoing_id THEN incoming_msg_id
+            ELSE outgoing_msg_id
+        END AS interacted_id,
+        MAX(timestamp) AS latest_timestamp
     FROM chats
     WHERE $outgoing_id IN (outgoing_msg_id, incoming_msg_id)
+    GROUP BY interacted_id
+    ORDER BY latest_timestamp DESC
 ";
 
 $query = mysqli_query($con, $sql);
-$interacted_ids = [];
-while ($row = mysqli_fetch_assoc($query)) {
-    $interacted_ids[] = $row['interacted_id'];
-}
 
-if (!empty($interacted_ids)) {
+if (mysqli_num_rows($query) > 0) {
+    $interacted_ids = [];
+    while ($row = mysqli_fetch_assoc($query)) {
+        $interacted_ids[] = $row['interacted_id'];
+    }
+
     $interacted_ids_str = implode(',', $interacted_ids);
-    
+
     $sql_users = "
         SELECT user_id AS id, user_name AS name, user_image AS image 
         FROM user_list 
         WHERE user_id IN ($interacted_ids_str)
     ";
-    
+
     $sql_orgs = "
         SELECT org_id AS id, org_name AS name, org_logo AS image 
         FROM org_list 
         WHERE org_id IN ($interacted_ids_str)
     ";
-    
+
     $users_query = mysqli_query($con, $sql_users);
     $orgs_query = mysqli_query($con, $sql_orgs);
-    
+
     while ($user = mysqli_fetch_assoc($users_query)) {
         echo '<a onclick="addClickListenersToInboxList();" data-out_id="'. $outgoing_id .'" data-in_id="' . $user['id'] . '">
                 <div class="content">
@@ -58,7 +63,6 @@ if (!empty($interacted_ids)) {
                 </div>
             </a>';
     }
-    
 
     while ($org = mysqli_fetch_assoc($orgs_query)) {
         echo '<a onclick="addClickListenersToInboxList();" data-out_id="'. $outgoing_id .'" data-in_id="' . $org['id'] . '">

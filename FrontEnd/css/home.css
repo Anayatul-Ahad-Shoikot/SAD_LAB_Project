@@ -223,7 +223,7 @@
 .blog-post_title {
     font-size: 2rem;
     text-transform: uppercase;
-    color: #4facfe;
+    color: var(--primary-title-color);
 }
 
 .blog-post_date {
@@ -254,6 +254,10 @@
     padding-right: 2rem;
     align-items: center;
     align-content: center;
+}
+
+.likes i{
+    font-size: 15px;
 }
 
 .blog-post .blog-post_cta {
