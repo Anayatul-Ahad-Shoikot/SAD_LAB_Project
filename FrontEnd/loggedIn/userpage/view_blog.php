@@ -33,38 +33,44 @@ if ($unreadNotificationsResult) {
 
   <?php include "../../components/navbarU.php" ?>
 
-  <div class="blog-details-container">
-    <div class="IMG">
-      <img src="/UserImage/blogpic/<?php echo $post_image ?>" alt="image name here">
-    </div>
 
-    <div class="blog-details">
-      <h1 class="blog-details-title"><?php echo $post_title ?></h1>
-      <h3 class="blog-details-author">By <?php echo $acc_name . ", " . $published ?></h3>
-      <p class="blog-details-content">
-        <?php echo $post_content ?>
-      </p>
-    </div>
+  <div class="container">
+        <div class="options">
+            <a href="home.php" id="button-30">Go back</a>
+        </div>
+        <div class="blog-details-container">
+      <div class="IMG">
+        <img src="/UserImage/blogpic/<?php echo $post_image ?>" alt="image name here">
+      </div>
 
-    <div class="blog-actions">
-      <form action="../../../BackEnd/react_handler_BE.php" method="post">
+      <div class="blog-details">
+        <h1 class="blog-details-title"><?php echo $post_title ?></h1>
+        <h3 class="blog-details-author">By <?php echo $acc_name . ", " . $published ?></h3>
+        <p class="blog-details-content">
+          <?php echo $post_content ?>
+        </p>
+      </div>
+
+      <div class="blog-actions">
+        <form action="../../../BackEnd/react_handler_BE.php" method="post">
+          <input type="hidden" name="post_id" value="<?php echo $post_id ?>">
+          <button type="submit" name="like" onclick="storeScrollPosition('LIKE')" id="button-30"><i class='bx bxs-like'></i></button>
+        </form>
+        <p class="likes-count"><?php echo $likes ?></p>
+      </div>
+
+      <h2><i class='bx bxs-message-dots'></i> Comments:</h2>
+
+      <div class="comments">
+        <?php include('../../../BackEnd/comment_fetch_BE.php'); ?>
+      </div>
+
+      <form id="write-comment" action="../../../BackEnd/comment_handler_BE.php" method="post">
         <input type="hidden" name="post_id" value="<?php echo $post_id ?>">
-        <button type="submit" name="like" onclick="storeScrollPosition('LIKE')" id="button-30"><i class='bx bxs-like'></i></button>
+        <input type="text" name="comment" placeholder="Add a comment" required>
+        <button type="submit" name="submit" onclick="storeScrollPosition('COMMENT')" id="button-30">Comment</button>
       </form>
-      <p class="likes-count"><?php echo $likes ?></p>
     </div>
-
-    <h2><i class='bx bxs-message-dots'></i> Comments:</h2>
-
-    <div class="comments">
-      <?php include('../../../BackEnd/comment_fetch_BE.php'); ?>
-    </div>
-
-    <form id="write-comment" action="../../../BackEnd/comment_handler_BE.php" method="post">
-      <input type="hidden" name="post_id" value="<?php echo $post_id ?>">
-      <input type="text" name="comment" placeholder="Add a comment" required>
-      <button type="submit" name="submit" onclick="storeScrollPosition('COMMENT')" id="button-30">Comment</button>
-    </form>
   </div>
 
   <?php include "../../components/footer.php" ?>

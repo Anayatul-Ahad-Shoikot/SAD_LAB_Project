@@ -1,5 +1,10 @@
-.blog-details-container {
+.container {
     margin: 3% 15%;
+}
+
+.blog-details-container {
+    margin-top: 2%;
+    width: 100%;
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;

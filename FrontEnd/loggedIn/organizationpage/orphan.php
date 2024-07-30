@@ -1,14 +1,13 @@
 <?php
-include("../../../BackEnd/organization_profile_fetch_BE.php");
-$acc_id = $_SESSION['acc_id'];
-$fetchUnreadNotificationsQuery = "SELECT COUNT(*) as unread_count FROM notifications WHERE is_read = 0 AND user_id = (SELECT user_id FROM user_list WHERE acc_id = $acc_id)";
-$unreadNotificationsResult = mysqli_query($con, $fetchUnreadNotificationsQuery);
-$unreadCount = 0;
-if ($unreadNotificationsResult) {
-    $unreadRow = mysqli_fetch_assoc($unreadNotificationsResult);
-    $unreadCount = $unreadRow['unread_count'];
-}
-mysqli_close($con);
+    include("../../../BackEnd/organization_profile_fetch_BE.php");
+    $acc_id = $_SESSION['acc_id'];
+    $fetchUnreadNotificationsQuery = "SELECT COUNT(*) as unread_count FROM notifications WHERE is_read = 0 AND org_id = (SELECT org_id FROM org_list WHERE acc_id = ?)";
+    $stmt = $con->prepare($fetchUnreadNotificationsQuery);
+    $stmt->bind_param('i', $acc_id);
+    $stmt->execute();
+    $stmt->bind_result($unreadCount);
+    $stmt->fetch();
+    $stmt->close();
 ?>
 
 <!DOCTYPE html>
@@ -72,10 +71,10 @@ mysqli_close($con);
         </div>
         
         <div class="options">
-            <a href="profile.php" class="btn">back</a>
-            <a href="REMOVED_ORPHAN_DASH.php" class="btn">Removed Child</a>
-            <a href="orphan_add.php" class="btn">Add Child</a>
-            <form action="#" method="GET">
+            <a href="profile.php" id="button-30">back</a>
+            <a href="orphan_removed.php" id="button-30">Removed Child</a>
+            <a href="orphan_add.php" id="button-30">Add Child</a>
+            <form action="../../../BackEnd/orphan_search_organization_BE.php" method="GET">
                 <input type="text" name="query" placeholder="Search Child...">
                 <button type="submit"><i class='bx bx-search bx-rotate-90' ></i></button>
             </form>
@@ -83,8 +82,20 @@ mysqli_close($con);
 
         <div class="plate">
             <?php
-            if (isset($_GET['query'])){
-                include('../../../BackEnd/orphan_search_organization_BE.php');
+            if (isset($_SESSION['search_results'])){
+                foreach ($_SESSION['search_results'] as $row) {
+                    echo '<div class="card">';
+                    echo '<div class="pb" style="background-image: url(\'/UserImage/childpic/' . htmlspecialchars($row['orphan_image']) . '\');"></div>';
+                    echo '<div class="info">';
+                    echo '<h1>' . htmlspecialchars($row['first_name']) . '</h1>';
+                    echo '</div>';
+                    echo '<div class="buttons">';
+                    echo '<a href="/BackEnd/orphan_remove_organization_BE.php?orphan_id=' . htmlspecialchars($row['orphan_id']) . '" id="button-30">Remove</a>';
+                    echo '<a href="/FrontEnd/loggedIn/organizationpage/orphan_profile.php?orphan_id=' . htmlspecialchars($row['orphan_id']) . '" id="button-30">View</a>';
+                    echo '</div>';
+                    echo '</div>';
+                }
+                unset($_SESSION['search_results']);
             } else {
                 include ('../../../BackEnd/orphan_view_organization_BE.php');
             }
@@ -95,11 +106,9 @@ mysqli_close($con);
 
     <?php include "../../components/footer.php" ?>
 
-    <button id="scrollTopBtn" title="Go to top">↑</button>
+    <button id="scrollTopBtn" title="Go to top"><i class='bx bx-chevrons-up bx-burst' ></i></button>
 
     <script src="/FrontEnd/js/scrollupBTN.js"></script>
-    <script src="/FrontEnd/js/notification_hovertime.js"></script>
-    <script src="/FrontEnd/js/notification_popup.js"></script>
     <script src="/FrontEnd/js/notification_color.js"></script>
     <script src="/FrontEnd/js/feedback.js"></script>
 </body>

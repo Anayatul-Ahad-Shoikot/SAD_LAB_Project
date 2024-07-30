@@ -55,3 +55,4 @@ if (isset($_GET['orphan_id'])) {
 } else {
     echo "error";
 }
+?>

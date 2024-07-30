@@ -1,14 +1,14 @@
 <?php
-include("../../../BackEnd/organization_profile_fetch_BE.php");
-include("../../../BackEnd/orphan_profile_fetch_BE.php");
-$acc_id = $_SESSION['acc_id'];
-$fetchUnreadNotificationsQuery = "SELECT COUNT(*) as unread_count FROM notifications WHERE is_read = 0 AND user_id = (SELECT user_id FROM user_list WHERE acc_id = $acc_id)";
-$unreadNotificationsResult = mysqli_query($con, $fetchUnreadNotificationsQuery);
-$unreadCount = 0;
-if ($unreadNotificationsResult) {
-    $unreadRow = mysqli_fetch_assoc($unreadNotificationsResult);
-    $unreadCount = $unreadRow['unread_count'];
-}
+    include("../../../BackEnd/organization_profile_fetch_BE.php");
+    include("../../../BackEnd/orphan_profile_fetch_BE.php");
+    $acc_id = $_SESSION['acc_id'];
+    $fetchUnreadNotificationsQuery = "SELECT COUNT(*) as unread_count FROM notifications WHERE is_read = 0 AND org_id = (SELECT org_id FROM org_list WHERE acc_id = $acc_id)";
+    $unreadNotificationsResult = mysqli_query($con, $fetchUnreadNotificationsQuery);
+    $unreadCount = 0;
+    if ($unreadNotificationsResult) {
+        $unreadRow = mysqli_fetch_assoc($unreadNotificationsResult);
+        $unreadCount = $unreadRow['unread_count'];
+    }
 ?>
 
 <!DOCTYPE html>
@@ -72,7 +72,7 @@ if ($unreadNotificationsResult) {
         </div>
 
         <div class="options">
-            <a href="orphan.php" class="btn">back</a>
+            <a href="orphan.php" id="button-30">back</a>
         </div>
 
 
@@ -198,10 +198,10 @@ if ($unreadNotificationsResult) {
                     <label>Image:</label>
                     <input type="file" name="image" accept="image/*">
                 </div>
-                <input type="hidden" name="orphan_id" value="<?php echo $row['orphan_id'] ?>">
-                <input type="hidden" name="guardian_id" value="<?php echo $row['guardian_id'] ?>">
+                <input type="hidden" name="orphan_id" value="<?php echo $orphan_id ?>">
+                <input type="hidden" name="guardian_id" value="<?php echo $guardian_id ?>">
                 <div class="btn">
-                    <button type="submit" name="update">Update</button>
+                    <button type="submit" name="update" id="button-30">Update</button>
                 </div>
 
             </form>
@@ -211,11 +211,9 @@ if ($unreadNotificationsResult) {
 
     <?php include "../../components/footer.php" ?>
 
-    <button id="scrollTopBtn" title="Go to top">↑</button>
+    <button id="scrollTopBtn" title="Go to top"><i class='bx bx-chevrons-up bx-burst' ></i></button>
 
     <script src="/FrontEnd/js/scrollupBTN.js"></script>
-    <script src="/FrontEnd/js/notification_hovertime.js"></script>
-    <script src="/FrontEnd/js/notification_popup.js"></script>
     <script src="/FrontEnd/js/notification_color.js"></script>
     <script src="/FrontEnd/js/feedback.js"></script>
 

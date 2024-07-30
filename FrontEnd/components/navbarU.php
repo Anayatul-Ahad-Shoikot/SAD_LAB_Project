@@ -1,54 +1,58 @@
 <?php
 
-    function getCurrentURLPath() {
-        return $_SERVER['REQUEST_URI'];
-    }
+function getCurrentURLPath()
+{
+    return $_SERVER['REQUEST_URI'];
+}
 
-    $current_url = getCurrentURLPath();
+$current_url = getCurrentURLPath();
 
-    $nav_options = [
-        'home' => [
-            '/FrontEnd/loggedIn/userpage/home.php',
-            '/FrontEnd/loggedIn/userpage/create_blog.php',
-            '/FrontEnd/loggedIn/userpage/view_blog.php'
-        ],
-        'organizations' => [
-            '/FrontEnd/loggedIn/userpage/organization.php',
-            '/FrontEnd/loggedIn/userpage/see_organization_orphanage.php',
-            '/FrontEnd/loggedIn/userpage/see_organization_profile.php',
-            '/FrontEnd/loggedIn/userpage/see_orphan_profile.php'
-        ],
-        'adoptions' => [
-            '/FrontEnd/loggedIn/userpage/adoption.php'
-        ],
-        'seminars' => [
-            '/FrontEnd/loggedIn/userpage/seminar.php'
-        ],
-        'joinus' => [
-            '/FrontEnd/loggedIn/userpage/joinus.php'
-        ],
-        'aboutus' => [
-            '/FrontEnd/loggedIn/userpage/aboutus.php'
-        ],
-        'myprofile' => [
-            '/FrontEnd/loggedIn/userpage/profile.php',
-            '/FrontEnd/loggedIn/userpage/profile_edit.php',
-            '/FrontEnd/loggedIn/userpage/chat_list.php'
-        ]
-    ];
+$nav_options = [
+    'home' => [
+        '/FrontEnd/loggedIn/userpage/home.php',
+        '/FrontEnd/loggedIn/userpage/create_blog.php',
+        '/FrontEnd/loggedIn/userpage/view_blog.php'
+    ],
+    'organizations' => [
+        '/FrontEnd/loggedIn/userpage/organization.php',
+        '/FrontEnd/loggedIn/userpage/see_organization_orphanage.php',
+        '/FrontEnd/loggedIn/userpage/see_organization_profile.php',
+        '/FrontEnd/loggedIn/userpage/see_orphan_profile.php'
+    ],
+    'adoptions' => [
+        '/FrontEnd/loggedIn/userpage/adoption.php'
+    ],
+    'seminars' => [
+        '/FrontEnd/loggedIn/userpage/seminar.php'
+    ],
+    'joinus' => [
+        '/FrontEnd/loggedIn/userpage/joinus.php'
+    ],
+    'aboutus' => [
+        '/FrontEnd/loggedIn/userpage/aboutus.php'
+    ],
+    'myprofile' => [
+        '/FrontEnd/loggedIn/userpage/profile.php',
+        '/FrontEnd/loggedIn/userpage/profile_edit.php',
+        '/FrontEnd/loggedIn/userpage/chat_list.php'
+    ]
+];
 
-    function getActiveOption($current_url, $nav_options) {
-        foreach ($nav_options as $option => $paths) {
-            foreach ($paths as $path) {
-                if (strpos($current_url, $path) !== false) {
-                    return $option;
-                }
+function getActiveOption($current_url, $nav_options)
+{
+    foreach ($nav_options as $option => $paths) {
+        foreach ($paths as $path) {
+            if (strpos($current_url, $path) !== false) {
+                return $option;
             }
         }
-        return '';
     }
-    $active_option = getActiveOption($current_url, $nav_options);
+    return '';
+}
+$active_option = getActiveOption($current_url, $nav_options);
 ?>
+
+
 <nav>
     <div class="top-nav">
         <ul class="contact-info">
@@ -72,13 +76,8 @@
     </div>
     <div class="bottom-nav">
         <div class="logo">
-            <!-- <img src="/Icons&logos/LOGO.png" height="35" alt="Logo"> -->
             <script type="module" src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/ripples.js"></script>
-            <l-ripples
-            size="45"
-            speed="2"
-            color="#f3254e" 
-            ></l-ripples>
+            <l-ripples size="45" speed="2" color="#f3254e"></l-ripples>
             <a href="/FrontEnd/loggedIn/userpage/home.php"><span class="icon first">Care</span><span class="icon second">Serenity</span></a>
         </div>
         <ul class="main-nav">
@@ -94,13 +93,30 @@
             <span class="h-bar"></span>
             <li><a href="/FrontEnd/loggedIn/userpage/aboutus.php" class="<?php echo $active_option == 'aboutus' ? 'active' : ''; ?>">About Us</a></li>
             <li class="icon" onclick="toggleNotifi()">
-                <img src="/Icons&logos/bell.png"><span style="background-color: <?php echo ($unreadCount > 0) ? 'red' : 'transparent'; ?>">00</span>
+                <i class='bx bxs-bell' style="<?php echo ($unreadCount > 0) ? 'display:none;' : ''; ?>"></i>
+                <i class='bx bxs-bell-ring bx-tada ' style="<?php echo ($unreadCount > 0) ? '' : 'display:none;'; ?>"></i>
             </li>
             <div class="notifi-box" id="box">
                 <h2>Notifications</h2>
                 <div id="content">
                     <?php
-                    include('/xampp/htdocs/SAD_LAB_Project/BackEnd/notificationU_BE.php');
+                        $acc_id = $_SESSION['acc_id'];
+                        $fetchNotificationsQuery = "SELECT * FROM notifications 
+                                                            WHERE user_id = (SELECT user_id FROM user_list WHERE acc_id = $acc_id)
+                                                            ORDER BY is_read ASC, date DESC LIMIT 10";
+                        $notificationsResult = mysqli_query($con, $fetchNotificationsQuery);
+                        if ($notificationsResult) {
+                            while ($notification = mysqli_fetch_assoc($notificationsResult)) {
+                                $class = ($notification['is_read'] == 0) ? ' unseen" style="background: rgb(255, 182, 193, .5);' : '';
+                                echo '<div class="notifi-item' . $class . '" onclick="markAsRead(' . $notification['notification_id'] . ', this)">';
+                                    echo '<div class="text">';
+                                    echo '<h4>' . $notification['content'] . '</h4>';
+                                    echo '<p>' . $notification['date'] . '</p>';
+                                    echo '</div>';
+                                echo '</div>';
+                            }
+                        }
+                        mysqli_close($con);
                     ?>
                 </div>
             </div>

@@ -87,7 +87,6 @@ if ($unreadNotificationsResult) {
 
     <script src="/FrontEnd/js/scrollupBTN.js"></script>
     <script src="/FrontEnd/js/notification_hovertime.js"></script>
-    <script src="/FrontEnd/js/notification_popup.js"></script>
     <script src="/FrontEnd/js/notification_color.js"></script>
     <script src="/FrontEnd/js/feedback.js"></script>
 </body>

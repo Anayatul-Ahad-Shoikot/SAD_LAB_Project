@@ -1,7 +1,7 @@
 <?php
 include("../../../BackEnd/see_user_profile_BE.php");
 $acc_id = $_SESSION['acc_id'];
-$fetchUnreadNotificationsQuery = "SELECT COUNT(*) as unread_count FROM notifications WHERE is_read = 0 AND user_id = (SELECT user_id FROM user_list WHERE acc_id = $acc_id)";
+$fetchUnreadNotificationsQuery = "SELECT COUNT(*) as unread_count FROM notifications WHERE is_read = 0 AND org_id = (SELECT org_id FROM org_list WHERE acc_id = $acc_id)";
 $unreadNotificationsResult = mysqli_query($con, $fetchUnreadNotificationsQuery);
 $unreadCount = 0;
 if ($unreadNotificationsResult) {
@@ -121,8 +121,6 @@ if ($unreadNotificationsResult) {
     <button id="scrollTopBtn" title="Go to top">↑</button>
 
     <script src="/FrontEnd/js/scrollupBTN.js"></script>
-    <script src="/FrontEnd/js/notification_hovertime.js"></script>
-    <script src="/FrontEnd/js/notification_popup.js"></script>
     <script src="/FrontEnd/js/notification_color.js"></script>
     <script src="/FrontEnd/js/feedback.js"></script>
 </body>

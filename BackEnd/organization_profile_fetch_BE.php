@@ -36,3 +36,5 @@ if (!isset($_SESSION['acc_id']) && !isset($_SESSION['role'])) {
         echo "User data not found.";
     }
 }
+
+?>

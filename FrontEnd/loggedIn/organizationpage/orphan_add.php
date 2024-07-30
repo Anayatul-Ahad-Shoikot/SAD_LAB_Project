@@ -1,14 +1,13 @@
 <?php
-include("../../../BackEnd/organization_profile_fetch_BE.php");
-$acc_id = $_SESSION['acc_id'];
-$fetchUnreadNotificationsQuery = "SELECT COUNT(*) as unread_count FROM notifications WHERE is_read = 0 AND user_id = (SELECT user_id FROM user_list WHERE acc_id = $acc_id)";
-$unreadNotificationsResult = mysqli_query($con, $fetchUnreadNotificationsQuery);
-$unreadCount = 0;
-if ($unreadNotificationsResult) {
-    $unreadRow = mysqli_fetch_assoc($unreadNotificationsResult);
-    $unreadCount = $unreadRow['unread_count'];
-}
-mysqli_close($con);
+    include("../../../BackEnd/organization_profile_fetch_BE.php");
+    $acc_id = $_SESSION['acc_id'];
+    $fetchUnreadNotificationsQuery = "SELECT COUNT(*) as unread_count FROM notifications WHERE is_read = 0 AND org_id = (SELECT org_id FROM org_list WHERE acc_id = $acc_id)";
+    $unreadNotificationsResult = mysqli_query($con, $fetchUnreadNotificationsQuery);
+    $unreadCount = 0;
+    if ($unreadNotificationsResult) {
+        $unreadRow = mysqli_fetch_assoc($unreadNotificationsResult);
+        $unreadCount = $unreadRow['unread_count'];
+    }
 ?>
 
 <!DOCTYPE html>
@@ -56,26 +55,26 @@ mysqli_close($con);
         <form action="../../../BackEnd/orphan_add_BE.php" method="post" enctype="multipart/form-data">
 
             <div class="basic_info">
-                <input type="text" name="first_name" placeholder="First Name">
-                <input type="text" name="last_name" placeholder="Last Name">
-                <input type="number" name="age" placeholder="Age">
-                <input type="text" name="guardian_name" placeholder="Local Gaurdian's Name">
-                <input type="text" name="guardian_contact" placeholder="Local Guardian's Contact Number">
-                <input type="text" name="guardian_location" placeholder="Local Gaurdian's Address">
-                <input type="text" name="medical_history" placeholder="Past Medical History">
-                <input type="text" name="hobby" placeholder="Hobby">
-                <input type="text" name="favorite_food" placeholder="Favourite Food">
-                <input type="text" name="favorite_game" placeholder="Favourite Game">
+                <input type="text" name="first_name" placeholder="First Name" required>
+                <input type="text" name="last_name" placeholder="Last Name" required>
+                <input type="number" name="age" placeholder="Age" required>
+                <input type="text" name="guardian_name" placeholder="Local Gaurdian's Name" required>
+                <input type="text" name="guardian_contact" placeholder="Local Guardian's Contact Number" required>
+                <input type="text" name="guardian_location" placeholder="Local Gaurdian's Address" required>
+                <input type="text" name="medical_history" placeholder="Past Medical History" required>
+                <input type="text" name="hobby" placeholder="Hobby" required>
+                <input type="text" name="favorite_food" placeholder="Favourite Food" required>
+                <input type="text" name="favorite_game" placeholder="Favourite Game" required>
                 <input type="text" name="skills" placeholder="Skills">
                 <input type="text" name="dreams" placeholder="Dreams">
                 <input type="text" name="problems" placeholder="Problems">
                 <input type="text" name="other_comments" placeholder="Other comments">
                 <div class="part">
                     <label>Date of Birth :</label>
-                    <input type="date" name="date_of_birth">
+                    <input type="date" name="date_of_birth" required>
                 </div>
                 <div class="part">
-                    <select name="gender">
+                    <select name="gender" required>
                         <option value='' selected disabled>Select gender</option>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
@@ -83,7 +82,7 @@ mysqli_close($con);
                     </select>
                 </div>
                 <div class="part">
-                    <select name="religion">
+                    <select name="religion" required>
                         <option value='' selected disabled>Select religion</option>
                         <option value="muslim">Muslim</option>
                         <option value="hindu">Hindu</option>
@@ -104,7 +103,7 @@ mysqli_close($con);
                     </select>
                 </div>
                 <div class="part">
-                    <select name="physical_condition">
+                    <select name="physical_condition" required>
                         <option value='' selected disabled>Select physical condition</option>
                         <option value="good">Good</option>
                         <option value="blind">Blind</option>
@@ -127,23 +126,21 @@ mysqli_close($con);
                 </div>
                 <div class="part">
                     <label>Image:</label>
-                    <input type="file" name="image" accept="image/*">
+                    <input type="file" name="image" accept="image/*" required>
                 </div>
             </div>
 
             <div class="btn">
-                <button type="submit" name="Register">Register</button>
+                <button type="submit" name="Register" id="button-30">Register</button>
             </div>
         </form>
     </div>
 
     <?php include "../../components/footer.php" ?>
 
-    <button id="scrollTopBtn" title="Go to top">↑</button>
+    <button id="scrollTopBtn" title="Go to top"><i class='bx bx-chevrons-up bx-burst' ></i></button>
 
     <script src="/FrontEnd/js/scrollupBTN.js"></script>
-    <script src="/FrontEnd/js/notification_hovertime.js"></script>
-    <script src="/FrontEnd/js/notification_popup.js"></script>
     <script src="/FrontEnd/js/notification_color.js"></script>
     <script src="/FrontEnd/js/feedback.js"></script>
 </body>

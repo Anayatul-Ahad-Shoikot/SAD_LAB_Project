@@ -1,5 +1,5 @@
 .container {
-  margin: 3% 15%;
+  margin: 3% 18%;
   padding: 3rem;
   background-color: #fff;
   border-radius: 8px;
@@ -8,9 +8,9 @@
 
 .container h1 {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: bolder;
-  color: var(--secondary-color-dark);
+  color: var(--primary-title-color);
   padding: 0;
   margin: 30px 0px;
   text-shadow: 2px 5px 30px var(--secondary-color-light);

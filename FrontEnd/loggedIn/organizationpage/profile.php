@@ -1,15 +1,15 @@
 <?php
-include("../../../BackEnd/organization_profile_fetch_BE.php");
-include('../../../BackEnd/adoption_request_fetch_BE.php');
-include('../../../BackEnd/donation_request_fetch_BE.php');
-$acc_id = $_SESSION['acc_id'];
-$fetchUnreadNotificationsQuery = "SELECT COUNT(*) as unread_count FROM notifications WHERE is_read = 0 AND user_id = (SELECT user_id FROM user_list WHERE acc_id = $acc_id)";
-$unreadNotificationsResult = mysqli_query($con, $fetchUnreadNotificationsQuery);
-$unreadCount = 0;
-if ($unreadNotificationsResult) {
-    $unreadRow = mysqli_fetch_assoc($unreadNotificationsResult);
-    $unreadCount = $unreadRow['unread_count'];
-}
+    include("../../../BackEnd/organization_profile_fetch_BE.php");
+    include('../../../BackEnd/adoption_request_fetch_BE.php');
+    include('../../../BackEnd/donation_request_fetch_BE.php');
+    $acc_id = $_SESSION['acc_id'];
+    $fetchUnreadNotificationsQuery = "SELECT COUNT(*) as unread_count FROM notifications WHERE is_read = 0 AND org_id = (SELECT org_id FROM org_list WHERE acc_id = $acc_id)";
+    $unreadNotificationsResult = mysqli_query($con, $fetchUnreadNotificationsQuery);
+    $unreadCount = 0;
+    if ($unreadNotificationsResult) {
+        $unreadRow = mysqli_fetch_assoc($unreadNotificationsResult);
+        $unreadCount = $unreadRow['unread_count'];
+    }
 ?>
 
 <!DOCTYPE html>
@@ -72,10 +72,10 @@ if ($unreadNotificationsResult) {
         </div>
 
         <div class="options">
-            <a href="chat_list.php" class="btn">Chats</a>
-            <a href="orphan.php" class="btn">Orphanage</a>
-            <a href="volunteer.php" class="btn">Volunteers</a>
-            <a href="profile_edit.php" class="btn">Profile Info</a>
+            <a href="chat_list.php" id="button-30">Chats</a>
+            <a href="orphan.php" id="button-30">Orphanage</a>
+            <a href="volunteer.php" id="button-30">Volunteers</a>
+            <a href="profile_edit.php" id="button-30">Profile Info</a>
         </div>
 
         <div class="short-report">
@@ -168,8 +168,6 @@ if ($unreadNotificationsResult) {
                         }
                     }
                     ?>
-                    <!-- <li class="organization"><p>Donation Received 99323 TK from Ahad</p></li>
-                    <li class="orphan"><p>Payel received 510 TK from Sabrina</p></li> -->
                 </ul>
             </div>
         </div>
@@ -177,11 +175,9 @@ if ($unreadNotificationsResult) {
 
     <?php include "../../components/footer.php" ?>
 
-    <button id="scrollTopBtn" title="Go to top">↑</button>
+    <button id="scrollTopBtn" title="Go to top"><i class='bx bx-chevrons-up bx-burst' ></i></button>
 
     <script src="/FrontEnd/js/scrollupBTN.js"></script>
-    <script src="/FrontEnd/js/notification_hovertime.js"></script>
-    <script src="/FrontEnd/js/notification_popup.js"></script>
     <script src="/FrontEnd/js/notification_color.js"></script>
     <script src="/FrontEnd/js/feedback.js"></script>
 </body>

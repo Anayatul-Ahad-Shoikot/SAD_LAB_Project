@@ -21,7 +21,7 @@
     justify-content: space-between;
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(10px);
-    border-radius: 15px;
+    border-radius: 120px 15px 15px 120px;
     box-shadow: 1rem 1rem 5rem rgba(0, 0, 0, 0.2);
     
 }
@@ -46,7 +46,7 @@
 }
 .account-data h1 {
     font-size: 3rem;
-    color: var(--secondary-color-dark);
+    color: var(--primary-title-color);
     text-transform: capitalize;
     margin: 10px 0px 20px 0px;
 }
@@ -130,7 +130,7 @@
 .form h2 {
     text-align: center;
     font-size: 2.5rem;
-    color: var(--secondary-color-dark);
+    color: var(--primary-title-color);
     padding: 0;
     margin: 30px 0px;
     text-shadow: 2px 5px 30px hsl(0, 0%, 100%);

@@ -17,11 +17,11 @@
                 echo '</div>';
                 echo '<div class="buttons">';
                 if ($role == 'user'){
-                    echo '<a href="/Root/D & A/Donations/U_DONATION_DASH_2.php?orphan_id=' . $row['orphan_id'] . '" class="message">Gift</a>';
-                    echo '<a href="/FrontEnd/loggedIn/userpage/see_orphan_profile.php?orphan_id=' . $row['orphan_id'] . '" class="message"> View </a>';
+                    echo '<a href="/Root/D & A/Donations/U_DONATION_DASH_2.php?orphan_id=' . $row['orphan_id'] . '" id="button-30">Gift</a>';
+                    echo '<a href="/FrontEnd/loggedIn/userpage/see_orphan_profile.php?orphan_id=' . $row['orphan_id'] . '" id="button-30"> View </a>';
                 } else if ($role == 'org'){
-                    echo '<a href="#?orphan_id=' . $row['orphan_id'] . '" class="message">Gift</a>';
-                    echo '<a href="/FrontEnd/loggedIn/organizationpage/see_orphan_profile.php?orphan_id=' . $row['orphan_id'] . '" class="message"> View </a>';
+                    echo '<a href="#?orphan_id=' . $row['orphan_id'] . '" id="button-30">Gift</a>';
+                    echo '<a href="/FrontEnd/loggedIn/organizationpage/see_orphan_profile.php?orphan_id=' . $row['orphan_id'] . '" id="button-30"> View </a>';
                 }
                 echo '</div>';
                 echo '</div>';
