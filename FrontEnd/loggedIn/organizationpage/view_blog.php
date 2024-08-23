@@ -33,10 +33,14 @@ if ($unreadNotificationsResult) {
 
   <?php include "../../components/navbarO.php" ?>
 
-  <div class="blog-details-container">
-    <div class="IMG">
-      <img src="/UserImage/blogpic/<?php echo $post_image ?>" alt="image name here">
-    </div>
+  <div class="container">
+      <div class="options">
+          <a href="home.php" id="button-30">Go back</a>
+      </div>
+      <div class="blog-details-container">
+      <div class="IMG">
+        <img src="/UserImage/blogpic/<?php echo $post_image ?>" alt="image name here">
+      </div>
 
     <div class="blog-details">
       <h1 class="blog-details-title"><?php echo $post_title ?></h1>
@@ -49,7 +53,7 @@ if ($unreadNotificationsResult) {
     <div class="blog-actions">
       <form action="../../../BackEnd/react_handler_BE.php" method="post">
         <input type="hidden" name="post_id" value="<?php echo $post_id ?>">
-        <button type="submit" name="like" onclick="storeScrollPosition('LIKE')"><i class='bx bxs-like'></i></button>
+        <button type="submit" name="like" onclick="storeScrollPosition('LIKE')" id="button-30"><i class='bx bxs-like'></i></button>
       </form>
       <p class="likes-count"><?php echo $likes ?></p>
     </div>
@@ -63,17 +67,17 @@ if ($unreadNotificationsResult) {
     <form id="write-comment" action="../../../BackEnd/comment_handler_BE.php" method="post">
       <input type="hidden" name="post_id" value="<?php echo $post_id ?>">
       <input type="text" name="comment" placeholder="Add a comment" required>
-      <button type="submit" name="submit" onclick="storeScrollPosition('COMMENT')">Comment</button>
+      <button type="submit" name="submit" onclick="storeScrollPosition('COMMENT')" id="button-30">Comment</button>
     </form>
+    </div>
   </div>
 
   <?php include "../../components/footer.php" ?>
 
-  <button id="scrollTopBtn" title="Go to top">↑</button>
+  <button id="scrollTopBtn" title="Go to top"><i class='bx bx-chevrons-up bx-burst' ></i></button>
 
   <script src="/FrontEnd/js/scrollupBTN.js"></script>
   <script src="/FrontEnd/js/react.js"></script>
-  <script src="/FrontEnd/js/feedback.js"></script>
   <script src="/FrontEnd/js/notification_color.js"></script>
 </body>
 

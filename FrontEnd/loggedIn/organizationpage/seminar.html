@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seminars</title>
+    <link rel="stylesheet" href="seminar.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Organization Seminars</h1>
+    </header>
+    
+    <main class="main-content">
+        <section class="create-seminar">
+            <h2>Create a New Seminar</h2>
+            <form id="create-seminar-form">
+                <div class="form-group">
+                    <label for="poster">Poster Image:</label>
+                    <input type="file" id="poster" name="poster" required>
+                </div>
+                <div class="form-group">
+                    <label for="title">Seminar Title:</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="organizer">Organizer Name:</label>
+                    <input type="text" id="organizer" name="organizer" required>
+                </div>
+                <div class="form-group">
+                    <label for="date">Date and Time:</label>
+                    <input type="datetime-local" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="location">Location:</label>
+                    <input type="text" id="location" name="location" required>
+                </div>
+                <div class="form-group">
+                    <label for="type">Type:</label>
+                    <select id="type" name="type" required>
+                        <option value="online">Online</option>
+                        <option value="offline">Offline</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="create-button">Create Seminar</button>
+            </form>
+        </section>
+        
+        <section class="seminar-list">
+            <h2>Manage Seminars</h2>
+            <div class="seminar-card">
+                <img src="seminar-poster.jpg" alt="Seminar Poster">
+                <h3>Seminar Title</h3>
+                <p>Organizer: Organization Name</p>
+                <p>Date: August 1, 2024</p>
+                <p>Location: Online</p>
+                <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in...</p>
+                <p class="joined-count">Joined: 10</p>
+            </div>
+            <div class="seminar-card">
+                <img src="seminar-poster.jpg" alt="Seminar Poster">
+                <h3>Seminar Title</h3>
+                <p>Organizer: Organization Name</p>
+                <p>Date: August 1, 2024</p>
+                <p>Location: Online</p>
+                <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in...</p>
+                <p class="joined-count">Joined: 10</p>
+            </div>
+            <div class="seminar-card">
+                <img src="seminar-poster.jpg" alt="Seminar Poster">
+                <h3>Seminar Title</h3>
+                <p>Organizer: Organization Name</p>
+                <p>Date: August 1, 2024</p>
+                <p>Location: Online</p>
+                <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in...</p>
+                <p class="joined-count">Joined: 10</p>
+            </div>
+            <div class="seminar-card">
+                <img src="seminar-poster.jpg" alt="Seminar Poster">
+                <h3>Seminar Title</h3>
+                <p>Organizer: Organization Name</p>
+                <p>Date: August 1, 2024</p>
+                <p>Location: Online</p>
+                <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in...</p>
+                <p class="joined-count">Joined: 10</p>
+            </div>
+            <div class="seminar-card">
+                <img src="seminar-poster.jpg" alt="Seminar Poster">
+                <h3>Seminar Title</h3>
+                <p>Organizer: Organization Name</p>
+                <p>Date: August 1, 2024</p>
+                <p>Location: Online</p>
+                <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in...</p>
+                <p class="joined-count">Joined: 10</p>
+            </div>
+            <!-- More seminar cards -->
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Organization. All rights reserved.</p>
+    </footer>
+
+    <script>
+// scripts.js
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('create-seminar-form');
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const poster = document.getElementById('poster').files[0];
+        const title = document.getElementById('title').value;
+        const organizer = document.getElementById('organizer').value;
+        const date = document.getElementById('date').value;
+        const location = document.getElementById('location').value;
+        const type = document.getElementById('type').value;
+        const description = document.getElementById('description').value;
+
+        const seminarList = document.querySelector('.seminar-list');
+        const seminarCard = document.createElement('div');
+        seminarCard.className = 'seminar-card';
+        seminarCard.innerHTML = `
+            <img src="${URL.createObjectURL(poster)}" alt="Seminar Poster">
+            <h3>${title}</h3>
+            <p>Organizer: ${organizer}</p>
+            <p>Date: ${new Date(date).toLocaleString()}</p>
+            <p>Location: ${location}</p>
+            <p class="description">${description}</p>
+            <p class="joined-count">Joined: 0</p>
+        `;
+        seminarList.appendChild(seminarCard);
+
+        form.reset();
+    });
+});
+
+    </script>
+</body>
+</html>

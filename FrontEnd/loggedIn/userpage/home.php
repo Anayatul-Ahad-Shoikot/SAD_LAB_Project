@@ -105,7 +105,7 @@ if ($unreadNotificationsResult) {
             <a href="create_blog.php" id="button-30">CreatePost</a>
         </div>
         <?php
-        include('../../../BackEnd/blog_show_BE.php');
+            include('../../../BackEnd/blog_show_BE.php');
         ?>
     </div>
 

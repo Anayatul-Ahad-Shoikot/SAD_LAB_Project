@@ -122,7 +122,7 @@ nav a {
     color: black;
 }
 
-.active {
+nav .active {
     font-size: 18px;
     color: var(--primary-color-dark);
     font-weight: 700;

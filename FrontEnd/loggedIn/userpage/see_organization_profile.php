@@ -22,8 +22,8 @@ if ($unreadNotificationsResult) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
     <link rel="stylesheet" href="/FrontEnd/css/colors.css">
-    <link rel="stylesheet" href="/FrontEnd/css/see_organization_profile.css">
     <link rel="stylesheet" href="/FrontEnd/css/navbar.css">
+    <link rel="stylesheet" href="/FrontEnd/css/see_organization_profile.css">
     <link rel="stylesheet" href="/FrontEnd/css/footer.css">
     <link rel="stylesheet" href="/FrontEnd/css/notification.css">
     <link rel="stylesheet" href="/FrontEnd/css/feedback.css">
@@ -53,7 +53,6 @@ if ($unreadNotificationsResult) {
     </div>
 
     <div class="container">
-        
         <div class="accounnt-information-container">
             <div class="account-picture">
                 <img src="../../../UserImage/accountPic/<?php echo $org_logo ?>" alt="profile">
@@ -90,8 +89,6 @@ if ($unreadNotificationsResult) {
     <button id="scrollTopBtn" title="Go to top"><i class='bx bx-chevrons-up bx-burst' ></i></button>
 
     <script src="/FrontEnd/js/scrollupBTN.js"></script>
-    <script src="/FrontEnd/js/notification_hovertime.js"></script>
-    <script src="/FrontEnd/js/notification_popup.js"></script>
     <script src="/FrontEnd/js/notification_color.js"></script>
     <script src="/FrontEnd/js/feedback.js"></script>
 

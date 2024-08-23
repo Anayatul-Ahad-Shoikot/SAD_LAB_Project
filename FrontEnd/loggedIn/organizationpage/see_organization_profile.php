@@ -27,7 +27,7 @@ if ($unreadNotificationsResult) {
     <link rel="stylesheet" href="/FrontEnd/css/notification.css">
     <link rel="stylesheet" href="/FrontEnd/css/feedback.css">
     <link rel="icon" href="/Icons&logos/LOGO.png" type="image/x-icon">
-    <title>CareSenerity | Profile </title>
+    <title>CareSenerity | Organization</title>
 </head>
 
 <body>
@@ -72,11 +72,10 @@ if ($unreadNotificationsResult) {
         </div>
 
         <div class="options">
-            <a href="organization.php" class="btn">back</a>
-            <a href="chat.php" class="btn">Inbox</a>
-            <a href="see_organization_orphanage.php?org_id=<?php echo $org_id ?>" class="btn">Orphanage</a>
+            <a href="organization.php" id="button-30">back</a>
+            <a href="chat.php?out_id=<?php echo $org_id ?>&in_id=<?php echo $org_id ?>" id="button-30">Inbox</a>
+            <a href="see_organization_orphanage.php?org_id=<?php echo $org_id ?>" id="button-30" >Orphanage</a>
         </div>
-
 
         <div class="short-report">
             <h1>Need idea what to put here</h1>
@@ -87,7 +86,7 @@ if ($unreadNotificationsResult) {
 
     <?php include "../../components/footer.php" ?>
 
-    <button id="scrollTopBtn" title="Go to top">↑</button>
+    <button id="scrollTopBtn" title="Go to top"><i class='bx bx-chevrons-up bx-burst' ></i></button>
 
     <script src="/FrontEnd/js/scrollupBTN.js"></script>
     <script src="/FrontEnd/js/notification_color.js"></script>

@@ -1,19 +1,18 @@
 <?php
-include("../../../BackEnd/db_con.php");
-session_start();
-$acc_id = $_SESSION['acc_id'];
-$fetchUnreadNotificationsQuery = "SELECT COUNT(*) as unread_count FROM notifications WHERE is_read = 0 AND org_id = (SELECT org_id FROM org_list WHERE acc_id = $acc_id)";
-$unreadNotificationsResult = mysqli_query($con, $fetchUnreadNotificationsQuery);
-$unreadCount = 0;
-if ($unreadNotificationsResult) {
-    $unreadRow = mysqli_fetch_assoc($unreadNotificationsResult);
-    $unreadCount = $unreadRow['unread_count'];
-}
-
-$sql = mysqli_query($con, "SELECT org_name, org_logo FROM org_list WHERE acc_id = {$_SESSION['acc_id']}");
-if (mysqli_num_rows($sql) > 0) {
-    $row = mysqli_fetch_assoc($sql);
-}
+    include("../../../BackEnd/db_con.php");
+    session_start();
+    $acc_id = $_SESSION['acc_id'];
+    $fetchUnreadNotificationsQuery = "SELECT COUNT(*) as unread_count FROM notifications WHERE is_read = 0 AND org_id = (SELECT org_id FROM org_list WHERE acc_id = $acc_id)";
+    $unreadNotificationsResult = mysqli_query($con, $fetchUnreadNotificationsQuery);
+    $unreadCount = 0;
+    if ($unreadNotificationsResult) {
+        $unreadRow = mysqli_fetch_assoc($unreadNotificationsResult);
+        $unreadCount = $unreadRow['unread_count'];
+    }
+    $sql = mysqli_query($con, "SELECT org_name, org_logo FROM org_list WHERE acc_id = {$_SESSION['acc_id']}");
+    if (mysqli_num_rows($sql) > 0) {
+        $row = mysqli_fetch_assoc($sql);
+    }
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +38,7 @@ if (mysqli_num_rows($sql) > 0) {
     <div class="container">
         <div class="users">
             <div class="search">
-                <a href="profile.php" class="btn">back</a>
+                <a href="profile.php" id="button-30">back</a>
                 <input type="text" placeholder="Search users by name...">
             </div>
             <div class="search-list">

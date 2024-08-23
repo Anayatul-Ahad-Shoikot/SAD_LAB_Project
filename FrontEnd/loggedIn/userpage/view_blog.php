@@ -35,10 +35,10 @@ if ($unreadNotificationsResult) {
 
 
   <div class="container">
-        <div class="options">
-            <a href="home.php" id="button-30">Go back</a>
-        </div>
-        <div class="blog-details-container">
+    <div class="options">
+      <a href="home.php" id="button-30">Go back</a>
+    </div>
+    <div class="blog-details-container">
       <div class="IMG">
         <img src="/UserImage/blogpic/<?php echo $post_image ?>" alt="image name here">
       </div>
@@ -75,12 +75,10 @@ if ($unreadNotificationsResult) {
 
   <?php include "../../components/footer.php" ?>
 
-  <button id="scrollTopBtn" title="Go to top"><i class='bx bx-chevrons-up bx-burst' ></i></button>
+  <button id="scrollTopBtn" title="Go to top"><i class='bx bx-chevrons-up bx-burst'></i></button>
 
   <script src="/FrontEnd/js/scrollupBTN.js"></script>
   <script src="/FrontEnd/js/react.js"></script>
-  <script src="/FrontEnd/js/notification_hovertime.js"></script>
-  <script src="/FrontEnd/js/notification_popup.js"></script>
   <script src="/FrontEnd/js/notification_color.js"></script>
 </body>
 

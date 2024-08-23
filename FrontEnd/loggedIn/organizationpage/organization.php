@@ -1,14 +1,14 @@
 <?php
-include("../../../BackEnd/db_con.php");
-session_start();
-$acc_id = $_SESSION['acc_id'];
-$fetchUnreadNotificationsQuery = "SELECT COUNT(*) as unread_count FROM notifications WHERE is_read = 0 AND org_id = (SELECT org_id FROM org_list WHERE acc_id = $acc_id)";
-$unreadNotificationsResult = mysqli_query($con, $fetchUnreadNotificationsQuery);
-$unreadCount = 0;
-if ($unreadNotificationsResult) {
-    $unreadRow = mysqli_fetch_assoc($unreadNotificationsResult);
-    $unreadCount = $unreadRow['unread_count'];
-}
+  include("../../../BackEnd/db_con.php");
+  session_start();
+  $acc_id = $_SESSION['acc_id'];
+  $fetchUnreadNotificationsQuery = "SELECT COUNT(*) as unread_count FROM notifications WHERE is_read = 0 AND org_id = (SELECT org_id FROM org_list WHERE acc_id = $acc_id)";
+  $unreadNotificationsResult = mysqli_query($con, $fetchUnreadNotificationsQuery);
+  $unreadCount = 0;
+  if ($unreadNotificationsResult) {
+      $unreadRow = mysqli_fetch_assoc($unreadNotificationsResult);
+      $unreadCount = $unreadRow['unread_count'];
+  }
 ?>
 
 <!DOCTYPE html>
@@ -53,10 +53,11 @@ if ($unreadNotificationsResult) {
 
     <div class="container">
       <div class="options">
-              <form action="#" method="GET">
-                <input type="text" name="query" placeholder="Search Organizations...">
-                <button type="submit"><i class="ri-search-line"></i></button>
-              </form>
+        <a href="organization.php" id="button-30">back</a>
+        <form action="#" method="GET">
+          <input type="text" name="query" placeholder="Search Organizations...">
+          <button type="submit"><i class="ri-search-line"></i></button>
+        </form>
       </div>
       <div class="organization-container">
         <?php 
@@ -71,7 +72,7 @@ if ($unreadNotificationsResult) {
 
     <?php include "../../components/footer.php" ?>
 
-    <button id="scrollTopBtn" title="Go to top">↑</button>
+    <button id="scrollTopBtn" title="Go to top"><i class='bx bx-chevrons-up bx-burst' ></i></button>
 
     <script src="/FrontEnd/js/scrollupBTN.js"></script>
     <script src="/FrontEnd/js/notification_color.js"></script>

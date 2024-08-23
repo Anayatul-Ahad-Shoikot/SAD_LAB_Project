@@ -1,19 +1,19 @@
 <?php
-include("../../../BackEnd/db_con.php");
-session_start();
-$acc_id = $_SESSION['acc_id'];
-$fetchUnreadNotificationsQuery = "SELECT COUNT(*) as unread_count FROM notifications WHERE is_read = 0 AND user_id = (SELECT user_id FROM user_list WHERE acc_id = $acc_id)";
-$unreadNotificationsResult = mysqli_query($con, $fetchUnreadNotificationsQuery);
-$unreadCount = 0;
-if ($unreadNotificationsResult) {
-    $unreadRow = mysqli_fetch_assoc($unreadNotificationsResult);
-    $unreadCount = $unreadRow['unread_count'];
-}
+    include("../../../BackEnd/db_con.php");
+    session_start();
+    $acc_id = $_SESSION['acc_id'];
+    $fetchUnreadNotificationsQuery = "SELECT COUNT(*) as unread_count FROM notifications WHERE is_read = 0 AND user_id = (SELECT user_id FROM user_list WHERE acc_id = $acc_id)";
+    $unreadNotificationsResult = mysqli_query($con, $fetchUnreadNotificationsQuery);
+    $unreadCount = 0;
+    if ($unreadNotificationsResult) {
+        $unreadRow = mysqli_fetch_assoc($unreadNotificationsResult);
+        $unreadCount = $unreadRow['unread_count'];
+    }
 
-$sql = mysqli_query($con, "SELECT user_name, user_image FROM user_list WHERE acc_id = {$_SESSION['acc_id']}");
-if (mysqli_num_rows($sql) > 0) {
-    $row = mysqli_fetch_assoc($sql);
-}
+    $sql = mysqli_query($con, "SELECT user_name, user_image FROM user_list WHERE acc_id = {$_SESSION['acc_id']}");
+    if (mysqli_num_rows($sql) > 0) {
+        $row = mysqli_fetch_assoc($sql);
+    }
 ?>
 
 <!DOCTYPE html>
@@ -60,8 +60,6 @@ if (mysqli_num_rows($sql) > 0) {
     </div>
 
     <script src="/FrontEnd/js/chat_user.js"></script>
-    <script src="/FrontEnd/js/notification_hovertime.js"></script>
-    <script src="/FrontEnd/js/notification_popup.js"></script>
     <script src="/FrontEnd/js/notification_color.js"></script>
 
 </body>

@@ -34,7 +34,7 @@
     height: 42px;
     width: 100%;
     font-size: 14px;
-    padding: 0 5px;
+    padding: 0 5px 0px 15px;
     outline: none;
     border-radius: 8px;
     transition: all 0.2s ease;
@@ -165,7 +165,7 @@
   max-width: calc(100% - 130px);
 }
 .outgoing .details p{
-  font-size: 16px;
+  font-size: 14px;
   background: #333;
   color: #fff;
   border-radius: 18px 18px 0 18px;
@@ -184,11 +184,11 @@
   max-width: calc(100% - 130px);
 }
 .incoming .details p{
-  font-size: 16px;
+  font-size: 14px;
   background: #fff;
   color: #333;
   border-radius: 18px 18px 18px 0;
-  box-shadow: 0px 0px 10px grey;
+  background-color: rgba(164, 164, 164, 0.743);
 }
 .typing-area{
   padding: 15px;

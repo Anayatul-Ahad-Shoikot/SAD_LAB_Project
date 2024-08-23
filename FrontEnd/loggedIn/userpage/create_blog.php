@@ -51,7 +51,7 @@ if ($unreadNotificationsResult) {
         </select>
         <input class="img" type="file" name="img" accept="image/*">
       </div>
-      <button type="submit" name="submit">Post</button>
+      <button type="submit" name="submit" id="button-30">Post</button>
     </form>
   </div>
 

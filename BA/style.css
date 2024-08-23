@@ -1,0 +1,468 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Source Code Pro';
+    font-size: 13px;
+}
+body::-webkit-scrollbar{
+    display: none;
+}
+body {
+    position: relative;
+    background-color: black;
+    color: wheat;
+}
+a{
+    text-decoration: none;
+    color: wheat;
+}
+header {
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.secondaryNav {
+    width: 100vw;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(255, 255, 255, .15);
+    padding: 0px 12%;
+    color: wheat;
+    backdrop-filter: blur(5px);
+}
+.secondaryNav ul , .primaryNav ul{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    height: 100%;
+    gap: 25px;
+}
+.secondaryNav ul li {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 5px;
+}
+.secondaryNav ul li i{
+    font-size: 15px;
+}
+#login-btn {
+    background-color: white;
+    transition: .6s;
+}
+#login-btn:hover{
+    background-color: wheat;
+    transition: .6s;
+}
+#login-btn a{
+    color: black;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 0px 10px;
+}
+
+
+
+
+
+
+.primaryNav {
+    width: 100vw;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+    padding: 0px 12%;
+    color: wheat;
+}
+.primaryNav h1 {
+    font-size: 50px;
+}
+.primaryNav h1 span {
+    font-size: 50px;
+    color: rgb(7, 255, 3);
+}
+.primaryNav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.primaryNav .primaryList {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-size: 20px;
+    font-weight: 600;
+    transition: 0.6s;
+    padding: 0 20px;
+}
+.primaryList:hover {
+    cursor: pointer;
+    padding: 0px 30px;
+    background-color: rgba(255, 255, 255, 0.15);
+    transition: 0.6s;
+}
+.primaryNav ul li ul.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    list-style-type: none;
+    z-index: 1000;
+    min-width: 200px;
+}
+.primaryNav ul li:hover ul.dropdown {
+    display: block;
+}
+.primaryNav ul li ul.dropdown li {
+    display: block;
+    padding: 10px 20px;
+    white-space: nowrap;
+    font-size: 13px;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: wheat;
+    font-family: 'Poppins';
+    font-weight: 300;
+    border-bottom: 1px solid rgb(211, 211, 211, .5);
+}
+.primaryNav ul li ul.dropdown li:hover {
+    background-color: rgba(7, 255, 3, 0.2);
+}
+
+
+
+
+
+
+
+
+
+
+.hero-section {
+    width: 100%;
+    height: calc(100vh - 90px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    position: relative;
+}
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    animation: fadeInOut 20s infinite;
+}
+.image:nth-child(1) {
+    animation-delay: 0s;
+}
+.image:nth-child(2) {
+    animation-delay: 5s;
+}
+.image:nth-child(3) {
+    animation-delay: 10s;
+}
+.image:nth-child(4) {
+    animation-delay: 15s;
+}
+.image h1 {
+    font-size: 10vw;
+    margin: 0;
+    text-align: center;
+    color: white;
+}
+.hero-section h1 {
+    font-family: 'Poppins';
+    font-size: 40vw;
+    letter-spacing: -10px;
+    transform: scaleY(1.3);
+    transform-origin: center;
+    background: linear-gradient(45deg, #228B22, #3C5E36, #006D5B, #046307);
+    background-size: 500%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: colorChange 6s infinite linear;
+
+}
+@keyframes fadeInOut {
+    0%, 20% {
+        opacity: 1;
+    }
+    25%, 100% {
+        opacity: 0;
+    }
+}
+@keyframes colorChange {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+
+
+
+
+
+
+.hero-section .hover {
+    position: absolute;
+    top: (100%/2);
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: wheat;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    padding: 45px 0px;
+    transition: .6s;
+}
+.hover:hover{
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(13px);
+    transition: .6s;
+}
+.hover p{
+    font-family: 'Poppins';
+    font-size: 3.5vw;
+    font-weight: 900;
+}
+.hover .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+.buttons a {
+    text-decoration: none;
+    font-size: .8vw;
+    font-weight: 600;
+    padding: 10px 15px;
+    border-radius: 35px;
+    background-color:rgb(7, 255, 3);
+    transition: .3s ease-out;
+    color: black;
+}
+.buttons a:hover{
+    transform: scale(1.1);
+    transition: .5s;
+}
+.getstarted {
+    background-color: antiquewhite;
+    border-radius: 10px;
+    margin-top: 25px;
+    padding: 10px 20px;
+    transition: .6s;
+}
+.getstarted:hover{
+    background-color: wheat;
+    transition: .6s;
+}
+.getstarted a{
+    font-family: 'Poppins';
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+
+.portion {
+    display: flex;
+    align-items: center;
+    gap: 8rem;
+    padding: 13% 15%;
+    background-color: black;
+    color: wheat;
+    transition: .6s;
+}
+.portion:hover{
+    background-color: rgba(255, 255, 255, 0.05);
+    transition: .3s;
+}
+.portion img{
+    box-shadow: 0px 0px 300px -40px white;
+    border-radius: 14px;
+}
+.portion button {
+    border: none;
+    font-size: .8vw;
+    font-weight: 600;
+    padding: 10px 25px;
+    border-radius: 35px;
+    transition: .5s;
+}
+.portion button:hover{
+    border-radius: 4px;
+    transform: scale(1.1);
+    color: black;
+    transition: .5s;
+}
+.portion .text{
+    width: 500px;
+}
+.portion i{
+    font-size: 60px;
+}
+.portion h1{
+    font-family: 'Poppins';
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+.portion p{
+    font-size: 17px;
+    font-family: 'Poppins';
+    color: rgb(141, 131, 111);
+}
+.html i{
+    color: rgb(255, 119, 0);
+}
+.css {
+    justify-content: right;
+}
+.css .text{
+    text-align: right;
+}
+.css i{
+    color: skyblue;
+}
+.js i{
+    color: rgb(255, 247, 0);
+}
+.editor {
+    justify-content: right;
+}
+.editor .text{
+    text-align: right;
+}
+.editor i{
+    color: rgb(7, 255, 3);
+}
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    background-color: rgb(255, 255, 255 , .15);
+    backdrop-filter: blur(5px);
+    padding: 3% 12%;
+
+}
+.footer__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+    align-items: center;
+    border-bottom: 1px solid white;
+    padding-bottom: 20px;
+}
+.footer__content h1 {
+    margin-bottom: 1rem;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 2.5rem;
+}
+.footer__form form {
+    width: 100%;
+    max-width: 600px;
+    margin-inline: auto;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 10px;
+}
+.footer__form input {
+    width: 100%;
+    padding: 10px 1rem;
+    outline: none;
+    border: none;
+    font-size: 17px;
+    border-radius: 8px;
+}
+.footer__form button {
+    padding: 12px 20px;
+    outline: none;
+    border: none;
+    font-size: 15px;
+    font-weight: 700;
+    color: black;
+    background-color: rgb(7, 255, 3);
+    border-radius: 9px;
+    transition: .4s;
+}
+.footer__form button:hover {
+    background-color: rgb(34, 172, 34);
+    transition: .4s;
+}
+.footer__bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+.footer__logo h1 a {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.footer__logo p , .footer__container p{
+    margin-top: 5px;
+    font-size: 1rem;
+    color: rgb(141, 131, 111);
+}
+.footer__nav {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.footer__link a {
+    font-weight: 500;
+    color: rgb(141, 131, 111);
+    white-space: nowrap;
+}

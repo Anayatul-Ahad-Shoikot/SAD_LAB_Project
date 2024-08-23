@@ -27,8 +27,8 @@
 
                     echo '<div class="action_button">';
                         if ($role == 'org') {
-                            echo '<a href="/FrontEnd/loggedIn/organizationpage/see_organization_profile.php?org_id=' . $row['org_id'] . '"> Visit </a>';
-                            echo '<a href="/Root/D & A/Donations/U_DONATION_DASH.php?org_id=' . $row['org_id'] . '"> Donate </a>';
+                            echo '<a href="/FrontEnd/loggedIn/organizationpage/see_organization_profile.php?org_id=' . $row['org_id'] . '" id="button-30"> Visit </a>';
+                            echo '<a href="#?org_id=' . $row['org_id'] . '" id="button-30"> Donate </a>';
                         } else if ($role == 'admin') {
                             echo '<a href="/Root/Org_Page/O_VIEW_ORG.php?org_id=' . $row['org_id'] . '"> Visit </a>';
                         } else {

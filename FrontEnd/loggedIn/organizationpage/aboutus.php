@@ -113,33 +113,35 @@ if ($unreadNotificationsResult) {
     </div>
     <div id="line"></div>
     <div style="margin-top:0px;" class="row no-margin">
-        <iframe style="width:100%" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d249759.19784092825!2d79.10145254589841!3d12.009924873581818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1448883859107" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3650.582336034878!2d90.4471350761669!3d23.79788287863816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1721831420744!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     <div class="contactUs">
         <div class="contact_form">
             <h2 class="heading">Contact Form</h2>
             <br>
-            <div class="form_row">
-                <div class="label"><label>Enter Name </label><span>:</span></div>
-                <div class="inputbox"><input type="text" placeholder="Enter Name" name="name"></div>
-            </div>
-            <div class="form_row">
-                <div class="label"><label>Email Address </label><span>:</span></div>
-                <div class="inputbox"><input type="text" name="name" placeholder="Enter Email Address"></div>
-            </div>
-            <div class="form_row">
-                <div class="label"><label>Mobile Number</label><span>:</span></div>
-                <div class="inputbox"><input type="text" name="name" placeholder="Enter Mobile Number"></div>
-            </div>
-            <div class="form_row">
-                <div class="label"><label>Enter Message</label><span>:</span></div>
-                <div class="inputbox">
-                    <textarea rows="5" placeholder="Enter Your Message"></textarea>
+            <form action="../../../BackEnd/submit_message_BE.php" method="POST">
+                <div class="form_row">
+                    <div class="label"><label>Enter Name </label><span>:</span></div>
+                    <div class="inputbox"><input type="text" placeholder="Enter Name" name="name" required></div>
                 </div>
-            </div>
-            <div class="form_row">
-                <button class="btn btn-primary">Send Message</button>
-            </div>
+                <div class="form_row">
+                    <div class="label"><label>Email Address </label><span>:</span></div>
+                    <div class="inputbox"><input type="email" name="email" placeholder="Enter Email Address" required></div>
+                </div>
+                <div class="form_row">
+                    <div class="label"><label>Mobile Number</label><span>:</span></div>
+                    <div class="inputbox"><input type="text" name="mobile" placeholder="Enter Mobile Number" required></div>
+                </div>
+                <div class="form_row">
+                    <div class="label"><label>Your Message</label><span>:</span></div>
+                    <div class="inputbox">
+                        <textarea rows="5" name="message" placeholder="Write your message" required></textarea>
+                    </div>
+                </div>
+                <div class="form_row">
+                    <button type="submit" id="button-30">Send Message</button>
+                </div>
+            </form>
         </div>
         <div class="contact_address">
             <div class="address">
@@ -160,14 +162,14 @@ if ($unreadNotificationsResult) {
             
             <div class="card">
                 <div class="img-ctn">
-                    <img src="/Root/AboutUs_Page/ahnaf.jpg" alt="">
+                    <img src="../../../Icons&logos/kakon.jpg" alt="">
                 </div>
-                <h2>Ahnaf Tahmid</h2>
-                <p>Co-Founder</p>
+                <h2>Jannatul Ferdous Kakon</h2>
+                <p>Trustee</p>
                 <div class="icons">
                     <a href="#"><i class='bx bxl-github'></i></a>
                     <a href="#"><i class='bx bxl-linkedin-square'></i></a>
-                    <a href="https://www.facebook.com/ahnaf.fahid"><i class='bx bxl-facebook-circle'></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=100014323750499"><i class='bx bxl-facebook-circle'></i></a>
                 </div>
             </div>
 
@@ -186,14 +188,27 @@ if ($unreadNotificationsResult) {
 
             <div class="card">
                 <div class="img-ctn">
-                    <img src="/Root/AboutUs_Page/ela.jpg" alt="">
+                    <img src="" alt="sowrin">
                 </div>
-                <h2>Afia Zahin</h2>
-                <p>Trustee</p>
+                <h2>Sowrin Paul</h2>
+                <p>Co-Founder & Developer</p>
                 <div class="icons">
                     <a href="#"><i class='bx bxl-github'></i></a>
                     <a href="#"><i class='bx bxl-linkedin-square'></i></a>
-                    <a href="https://www.facebook.com/profile.php?id=100070131402177"><i class='bx bxl-facebook-circle'></i></a>
+                    <a href="https://www.facebook.com/paulsowrin"><i class='bx bxl-facebook-circle'></i></a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img-ctn">
+                    <img src="../../../Icons&logos/pata.jpg" alt="">
+                </div>
+                <h2>Paromita Choudhury</h2>
+                <p>CEO</p>
+                <div class="icons">
+                    <a href="#"><i class='bx bxl-github'></i></a>
+                    <a href="#"><i class='bx bxl-linkedin-square'></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=100024507141495"><i class='bx bxl-facebook-circle'></i></a>
                 </div>
             </div>
 
@@ -202,7 +217,7 @@ if ($unreadNotificationsResult) {
 
     <?php include "../../components/footer.php" ?>
 
-    <button id="scrollTopBtn" title="Go to top">↑</button>
+    <button id="scrollTopBtn" title="Go to top"><i class='bx bx-chevrons-up bx-burst' ></i></button>
 
     <script src="/FrontEnd/js/scrollupBTN.js"></script>
     <script src="/FrontEnd/js/notification_color.js"></script>
